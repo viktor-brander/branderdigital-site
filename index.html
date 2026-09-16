@@ -223,6 +223,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .section-title { margin-top: 0.5rem; font-size: clamp(1.875rem, 4vw, 3rem); font-weight: 800; line-height: 1.1; }
     .section-lead { margin-top: 1.25rem; font-size: 1.125rem; line-height: 1.75; color: var(--muted-fg); max-width: 40rem; }
 
+    /* LINKEDIN */
+    .li-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; max-width: 40rem; margin-left: auto; margin-right: auto; align-items: start; }
+    @media(min-width:768px) { .li-grid { grid-template-columns: repeat(2, 1fr); max-width: none; } }
+    .li-post { border-radius: calc(var(--radius) + 0.5rem); overflow: hidden; border: 1px solid var(--border); background: var(--card); }
+    .li-post iframe { display: block; width: 100%; border: 0; }
+
     /* CARDS */
     .card {
       border: 1px solid var(--border); background: var(--card);
@@ -484,6 +490,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <a href="#paketit">Paketit</a>
       <a href="#minusta">Minusta</a>
       <a href="#lupaukset">Lupaukset</a>
+      <a href="#linkedin">LinkedIn</a>
       <a href="#prosessi">Prosessi</a>
       <a href="#ukk">UKK</a>
     </div>
@@ -765,8 +772,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </section>
 
+  <!-- LINKEDIN -->
+  <section id="linkedin" class="section section-bg">
+    <div class="container">
+      <span class="section-tag">Ajatuksia LinkedInistä</span>
+      <h2 class="section-title">Nostoja <span class="text-gradient">LinkedIn-postauksistani.</span></h2>
+      <div class="li-grid" style="margin-top:3rem">
+        <div class="li-post"><iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7505238561340878848?collapsed=1" height="628" width="100%" frameborder="0" allowfullscreen="" loading="lazy" title="LinkedIn-postaus 1"></iframe></div>
+        <div class="li-post"><iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7029792346812653568?collapsed=1" height="877" width="100%" frameborder="0" allowfullscreen="" loading="lazy" title="LinkedIn-postaus 2"></iframe></div>
+      </div>
+    </div>
+  </section>
+
   <!-- PROSESSI -->
-  <section id="prosessi" class="section section-bg">
+  <section id="prosessi" class="section">
     <div class="container">
       <span class="section-tag">Näin aloitamme</span>
       <h2 class="section-title">Kolmessa askeleessa <span class="text-gradient">käyntiin.</span></h2>
@@ -824,6 +843,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="footer-links">
           <a href="#paketit">Paketit</a>
           <a href="#minusta">Minusta</a>
+          <a href="#linkedin">LinkedIn</a>
           <a href="#prosessi">Prosessi</a>
           <a href="#ukk">UKK</a>
           <a href="yhteydenotto.html">Yhteydenotto</a>
