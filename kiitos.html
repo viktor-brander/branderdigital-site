@@ -16,7 +16,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       var phone = sessionStorage.getItem('leadPhone');
       if (email) {
         window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({ user_email: email, user_phone: phone || undefined });
+        var userData = { email: email };
+        if (phone) userData.phone_number = phone;
+        window.dataLayer.push(['set', 'user_data', userData]);
         sessionStorage.removeItem('leadEmail');
         sessionStorage.removeItem('leadPhone');
       }
