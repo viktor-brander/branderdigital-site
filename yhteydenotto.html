@@ -120,7 +120,48 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
     .btn-outline:hover { background: var(--surface); }
     .btn-lg { padding: 0.75rem 1.75rem; font-size: 1rem; }
-    @media(max-width:767px) { .nav-links { display: none; } }
+    .nav-right { display: flex; align-items: center; gap: 0.5rem; }
+    .nav-burger { display: none; }
+    .nav-links .nav-links-cta { display: none; }
+    @media(max-width:767px) {
+      .nav-inner { padding: 0 0.75rem; }
+      .nav-logo { gap: 0.5rem; }
+      .nav-logo-dot { width: 1.5rem; height: 1.5rem; border-radius: 0.45rem; }
+      .nav-logo-text { font-size: 1rem; }
+      .nav-right { gap: 0.4rem; }
+      .nav-right .btn-primary { padding: 0.45rem 0.85rem; font-size: 0.8125rem; white-space: nowrap; }
+      .nav-burger {
+        display: block; position: relative; flex-shrink: 0;
+        width: 2.5rem; height: 2.5rem; border: 1.5px solid var(--border);
+        border-radius: 9999px; background: var(--card); cursor: pointer;
+      }
+      .nav-burger span {
+        position: absolute; left: 50%; top: 50%; width: 1rem; height: 2px;
+        background: var(--foreground); border-radius: 2px;
+        transform: translate(-50%, -50%); transition: transform .25s, opacity .2s;
+      }
+      .nav-burger span:nth-child(1) { transform: translate(-50%, calc(-50% - 5px)); }
+      .nav-burger span:nth-child(3) { transform: translate(-50%, calc(-50% + 5px)); }
+      .nav-burger.open span:nth-child(1) { transform: translate(-50%, -50%) rotate(45deg); }
+      .nav-burger.open span:nth-child(2) { opacity: 0; }
+      .nav-burger.open span:nth-child(3) { transform: translate(-50%, -50%) rotate(-45deg); }
+      .nav-links {
+        position: absolute; top: 100%; left: 0; right: 0;
+        flex-direction: column; align-items: stretch; gap: 0;
+        background: var(--card); border-bottom: 1px solid var(--border); box-shadow: var(--shadow-soft);
+        max-height: 0; overflow: hidden; visibility: hidden;
+        transition: max-height .3s ease, visibility 0s linear .3s;
+      }
+      .nav-links.open { max-height: 30rem; visibility: visible; transition: max-height .3s ease; }
+      .nav-links a { padding: 1rem 1.5rem; font-size: 1.0625rem; color: var(--foreground); border-bottom: 1px solid var(--border); }
+      .nav-links .nav-links-cta {
+        display: block; margin: 1.25rem 1.5rem 1.5rem; padding: 0.8rem 1.75rem;
+        text-align: center; font-size: 1rem; font-weight: 600; color: #fff;
+        background: var(--primary); border-bottom: none; border-radius: 9999px;
+        box-shadow: 0 4px 14px -4px rgba(66,133,244,0.5);
+      }
+      .nav-links .nav-links-cta:hover { color: #fff; }
+    }
 
     /* HERO */
     .hero {
@@ -505,14 +546,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <span class="nav-logo-dot"></span>
       <span class="nav-logo-text">Brander <span>Digital</span></span>
     </a>
-    <div class="nav-links">
+    <div class="nav-links" id="nav-menu">
       <a href="/#paketit">Paketit</a>
       <a href="/#minusta">Minusta</a>
       <a href="/#lupaukset">Lupaukset</a>
       <a href="/#prosessi">Prosessi</a>
       <a href="/#ukk">UKK</a>
+      <a href="/yhteydenotto" class="nav-links-cta" onclick="if(window.dataLayer){window.dataLayer.push({event:'cta_click',cta_location:'nav_menu'});}">Tilaa maksuton auditointi</a>
     </div>
-    <a href="/yhteydenotto" class="btn-primary">Ota yhteyttä</a>
+    <div class="nav-right">
+      <a href="/yhteydenotto" class="btn-primary">Ota yhteyttä</a>
+      <button class="nav-burger" type="button" aria-label="Avaa valikko" aria-expanded="false" aria-controls="nav-menu"><span></span><span></span><span></span></button>
+    </div>
   </div>
 </nav>
 
@@ -643,6 +688,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       alert('Jokin meni pieleen. Kokeile lähettää sähköpostia suoraan: viktor@branderdigital.fi');
     }
   }
+</script>
+<script>
+  (function () {
+    var burger = document.querySelector('.nav-burger');
+    var menu = document.getElementById('nav-menu');
+    if (!burger || !menu) return;
+    function setOpen(open) {
+      burger.classList.toggle('open', open);
+      menu.classList.toggle('open', open);
+      burger.setAttribute('aria-expanded', String(open));
+      burger.setAttribute('aria-label', open ? 'Sulje valikko' : 'Avaa valikko');
+    }
+    burger.addEventListener('click', function () {
+      var open = burger.getAttribute('aria-expanded') !== 'true';
+      setOpen(open);
+      if (open && window.dataLayer) window.dataLayer.push({ event: 'nav_menu_open' });
+    });
+    menu.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { setOpen(false); }); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setOpen(false); });
+    window.addEventListener('resize', function () { if (window.innerWidth > 767) setOpen(false); });
+  })();
 </script>
 </body>
 </html>
