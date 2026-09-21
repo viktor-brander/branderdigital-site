@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PG8D4L4V');</script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Data Studio -raportti (ent. Looker Studio): hyödyt ja tekijä</title>
+  <meta name="description" content="Data Studio (entinen Looker Studio) kokoaa Google Adsin, GA4:n ja muut luvut yhteen ilmaiseen raporttiin. Lue hyödyt, rajoitteet ja milloin tekijä kannattaa." />
+  <meta name="author" content="Viktor Brander" />
+  <meta property="og:title" content="Data Studio -raportti (entinen Looker Studio): 6 hyötyä ja milloin tarvitset tekijän" />
+  <meta property="og:description" content="Data Studio (entinen Looker Studio) kokoaa Google Adsin, GA4:n ja muut luvut yhteen ilmaiseen raporttiin. Lue hyödyt, rajoitteet ja milloin tekijä kannattaa." />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="fi_FI" />
+  <meta property="og:url" content="https://branderdigital.fi/data-studio-raportti" />
+  <meta property="og:image" content="https://branderdigital.fi/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="canonical" href="https://branderdigital.fi/data-studio-raportti" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Figtree:wght@400;500;600;700&display=swap" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet" /></noscript>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --radius: 0.875rem;
+      --background: oklch(0.995 0.002 250);
+      --foreground: oklch(0.18 0.03 260);
+      --surface: oklch(0.985 0.005 250);
+      --surface-soft: oklch(0.965 0.012 260);
+      --card: oklch(1 0 0);
+      --primary: oklch(0.50 0.19 256);
+      --primary-fg: oklch(0.99 0 0);
+      --muted-fg: oklch(0.40 0.02 260);
+      --border: oklch(0.91 0.012 260);
+      --brand-blue: #4285F4;
+      --brand-purple: #9B72CB;
+      --brand-pink: #D96570;
+      --brand-orange: #F9AB55;
+      --gradient: linear-gradient(100deg, #4285F4 0%, #9B72CB 38%, #D96570 72%, #F9AB55 100%);
+      --gradient-soft: linear-gradient(120deg, #dbeafe 0%, #ede9fe 35%, #fce7f3 65%, #fef3c7 100%);
+      --shadow-elegant: 0 10px 40px -12px rgba(155,114,203,0.35);
+      --shadow-soft: 0 8px 24px -10px rgba(30,30,60,0.12);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--background);
+      color: var(--foreground);
+      font-family: 'Figtree', ui-sans-serif, system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.6;
+    }
+
+    h1,h2,h3,h4 {
+      font-family: 'Outfit', ui-sans-serif, system-ui, sans-serif;
+      letter-spacing: -0.02em;
+    }
+
+    .text-gradient {
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: transparent;
+    }
+
+    .container { max-width: 72rem; margin: 0 auto; padding: 0 1.5rem; }
+
+    /* NAV */
+    nav.site-nav {
+      position: sticky; top: 0; z-index: 40;
+      border-bottom: 1px solid var(--border);
+      background: rgba(254,254,255,0.85);
+      backdrop-filter: blur(20px);
+    }
+    .nav-inner {
+      max-width: 72rem; margin: 0 auto; padding: 0 1.5rem;
+      height: 4rem; display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; color: inherit; }
+    .nav-logo-dot {
+      display: inline-block; width: 1.75rem; height: 1.75rem;
+      border-radius: 0.5rem; background: var(--gradient);
+      box-shadow: var(--shadow-elegant);
+    }
+    .nav-logo-text { font-family: 'Outfit', sans-serif; font-size: 1.125rem; font-weight: 600; }
+    .nav-logo-text span { color: var(--muted-fg); font-weight: 500; }
+    .nav-links { display: flex; align-items: center; gap: 1.75rem; }
+    .nav-links a { color: var(--muted-fg); text-decoration: none; font-size: 0.875rem; font-weight: 500; transition: color .15s; }
+    .nav-links a:hover { color: var(--foreground); }
+    .btn-primary {
+      background: var(--primary); color: #fff;
+      border: none; border-radius: 9999px;
+      padding: 0.5rem 1.25rem; font-size: 0.875rem; font-weight: 600;
+      cursor: pointer; text-decoration: none; display: inline-flex; align-items: center;
+      box-shadow: 0 4px 14px -4px rgba(66,133,244,0.5); transition: opacity .15s;
+    }
+    .btn-primary:hover { opacity: 0.9; }
+    .btn-outline {
+      background: transparent; color: var(--foreground);
+      border: 1.5px solid var(--border); border-radius: 9999px;
+      padding: 0.5rem 1.25rem; font-size: 0.875rem; font-weight: 600;
+      cursor: pointer; text-decoration: none; display: inline-flex; align-items: center;
+      transition: background .15s;
+    }
+    .btn-outline:hover { background: var(--surface); }
+    .btn-lg { padding: 0.75rem 1.75rem; font-size: 1rem; }
+    @media(max-width:767px) { .nav-links { display: none; } }
+
+    /* CTA */
+    .cta-box {
+      position: relative; overflow: hidden;
+      background: var(--gradient); border-radius: calc(var(--radius) + 1rem);
+      padding: 3rem 2rem; text-align: center;
+      box-shadow: var(--shadow-elegant);
+    }
+    @media(min-width:640px) { .cta-box { padding: 5rem 4rem; } }
+    .cta-shine {
+      position: absolute; inset: 0;
+      background: radial-gradient(circle at top left, rgba(255,255,255,0.25) 0%, transparent 55%);
+    }
+    .cta-box h2 {
+      position: relative; color: #fff;
+      font-size: clamp(1.875rem, 4vw, 3rem); font-weight: 800; max-width: 36rem; margin: 0 auto;
+    }
+    .cta-box p { position: relative; margin-top: 1.25rem; color: rgba(255,255,255,0.88); font-size: 1.125rem; max-width: 32rem; margin-left: auto; margin-right: auto; }
+    .btn-secondary {
+      position: relative; margin-top: 2rem;
+      background: #fff; color: var(--foreground);
+      border: none; border-radius: 9999px;
+      padding: 0.75rem 2rem; font-size: 1rem; font-weight: 700;
+      cursor: pointer; text-decoration: none; display: inline-flex; align-items: center;
+      box-shadow: var(--shadow-soft); transition: opacity .15s;
+    }
+    .btn-secondary:hover { opacity: 0.9; }
+
+    footer {
+      border-top: 1px solid var(--border); background: var(--surface);
+    }
+    .footer-inner {
+      max-width: 72rem; margin: 0 auto; padding: 3rem 1.5rem;
+      display: grid; grid-template-columns: 1fr; gap: 2rem;
+    }
+    @media(min-width:768px) { .footer-inner { grid-template-columns: repeat(3, 1fr); } }
+    .footer-logo { display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.75rem; }
+    .footer-tagline { font-size: 0.875rem; line-height: 1.6; color: var(--muted-fg); max-width: 18rem; }
+    .footer-nav-title, .footer-contact-title { font-family: 'Outfit', sans-serif; font-size: 0.875rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .footer-links { display: flex; flex-direction: column; gap: 0.5rem; }
+    .footer-links a { font-size: 0.875rem; color: var(--muted-fg); text-decoration: none; transition: color .15s; }
+    .footer-links a:hover { color: var(--foreground); }
+    .footer-contact-email { font-size: 0.875rem; color: var(--muted-fg); text-decoration: none; }
+    .footer-contact-email:hover { color: var(--foreground); }
+    .footer-bottom {
+      border-top: 1px solid var(--border);
+    }
+    .footer-bottom-inner {
+      max-width: 72rem; margin: 0 auto; padding: 1.25rem 1.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+      font-size: 0.75rem; color: var(--muted-fg);
+    }
+
+    /* PAGE VISIBILITY */
+    .page { display: none; }
+    .page.active { display: block; }
+
+    /* ARTICLE */
+    .article-wrap { max-width: 46rem; padding-top: 2.5rem; padding-bottom: 5rem; }
+    .breadcrumb { font-size: 0.875rem; color: var(--muted-fg); margin-bottom: 1.5rem; }
+    .breadcrumb a { color: var(--muted-fg); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--foreground); }
+    .article-header h1 { margin-top: 0.5rem; font-size: clamp(1.875rem, 4.5vw, 2.75rem); font-weight: 800; line-height: 1.12; }
+    .byline { margin-top: 1rem; font-size: 0.875rem; color: var(--muted-fg); }
+    .byline a { color: var(--primary); text-decoration: none; }
+    .article p, .article li { font-size: 1.0625rem; line-height: 1.75; }
+    .article p { margin-top: 1rem; }
+    .article a { color: var(--primary); }
+    .article .lead { font-size: 1.25rem; line-height: 1.65; color: var(--muted-fg); margin-top: 1.5rem; }
+    .article h2 { margin-top: 3rem; font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 700; line-height: 1.2; }
+    .article h3 { margin-top: 2rem; font-size: 1.25rem; font-weight: 600; }
+    .article ul, .article ol { margin-top: 1rem; padding-left: 1.5rem; }
+    .article li { margin-top: 0.5rem; }
+    .tldr { margin-top: 2rem; padding: 1.5rem 1.75rem; border-radius: var(--radius); background: var(--gradient-soft); border: 1px solid var(--border); }
+    .tldr h2 { margin-top: 0; font-size: 1.25rem; }
+    .toc { margin-top: 2rem; padding: 1.25rem 1.75rem; border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); }
+    .toc h2 { margin-top: 0; font-size: 1rem; }
+    .toc a { text-decoration: none; }
+    .toc li { font-size: 0.9375rem; margin-top: 0.25rem; }
+    .steps li { padding-left: 0.25rem; }
+    .compare { margin-top: 1.5rem; display: grid; grid-template-columns: 1fr; gap: 1rem; }
+    @media(min-width:640px) { .compare { grid-template-columns: 1fr 1fr; } }
+    .compare-card { padding: 1.25rem 1.5rem; border: 1px solid var(--border); border-radius: var(--radius); background: var(--card); }
+    .compare-card-accent { background: var(--surface-soft); }
+    .compare-card h3 { margin-top: 0; }
+    .faq { margin-top: 1.5rem; }
+    .faq details { border-bottom: 1px solid var(--border); padding: 1rem 0; }
+    .faq summary { cursor: pointer; font-family: 'Outfit', sans-serif; font-size: 1.0625rem; font-weight: 600; list-style: none; }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::after { content: '+'; float: right; font-weight: 300; font-size: 1.25rem; }
+    .faq details[open] summary::after { content: '\2212'; }
+    .article-cta { margin-top: 3.5rem; }
+    .article-cta h2 { margin-top: 0; }
+
+  </style>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@graph":[
+    {"@type":"Article","headline":"Data Studio -raportti (entinen Looker Studio): 6 hyötyä ja milloin tarvitset tekijän","description":"Data Studio (entinen Looker Studio) kokoaa Google Adsin, GA4:n ja muut luvut yhteen ilmaiseen raporttiin. Lue hyödyt, rajoitteet ja milloin tekijä kannattaa.","inLanguage":"fi","mainEntityOfPage":"https://branderdigital.fi/data-studio-raportti","image":"https://branderdigital.fi/og-image.png","datePublished":"2026-09-21","dateModified":"2026-09-21","author":{"@type":"Person","name":"Viktor Brander","url":"https://www.linkedin.com/in/viktorbrander/"},"publisher":{"@type":"Organization","name":"Brander Digital","url":"https://branderdigital.fi/"}},
+    {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Etusivu","item":"https://branderdigital.fi/"},{"@type":"ListItem","position":2,"name":"Data Studio -raportti","item":"https://branderdigital.fi/data-studio-raportti"}]}
+  ]}
+  </script>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PG8D4L4V"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<!-- NAV -->
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <span class="nav-logo-dot"></span>
+      <span class="nav-logo-text">Brander <span>Digital</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="/#paketit">Paketit</a>
+      <a href="/#minusta">Minusta</a>
+      <a href="/#lupaukset">Lupaukset</a>
+      <a href="/#linkedin">LinkedIn</a>
+      <a href="/#prosessi">Prosessi</a>
+      <a href="/#ukk">UKK</a>
+    </div>
+    <a href="/yhteydenotto" class="btn-primary" onclick="if(window.dataLayer){window.dataLayer.push({event:'cta_click',cta_location:'nav'});}">Ota yhteyttä</a>
+  </div>
+</nav>
+<main>
+<article class="article">
+  <div class="container article-wrap">
+    <nav class="breadcrumb" aria-label="Murupolku"><a href="/">Etusivu</a> <span aria-hidden="true">/</span> <span>Data Studio -raportti</span></nav>
+
+    <header class="article-header">
+      <p class="section-tag">Opas</p>
+      <h1>Data Studio -raportti (entinen Looker Studio): 6 hyötyä ja milloin tarvitset tekijän</h1>
+      <p class="byline">Kirjoittanut <a href="https://www.linkedin.com/in/viktorbrander/" target="_blank" rel="noopener">Viktor Brander</a>, Brander Digital · Julkaistu <time datetime="2026-09-21">21.9.2026</time> · Päivitetty <time datetime="2026-09-21">21.9.2026</time></p>
+    </header>
+
+    <p class="lead">Data Studio kokoaa markkinoinnin ja verkkosivun luvut yhteen automaattisesti päivittyvään näkymään, ja perustyökalu on ilmainen. Tässä oppaassa käyn läpi hyödyt, rajoitteet ja sen, milloin raportin kannattaa antaa tekijälle.</p>
+
+    <aside class="tldr" aria-label="Hyödyt lyhyesti">
+      <h2>Data Studio -raportin hyödyt lyhyesti</h2>
+      <ol>
+        <li><strong>Ilmainen perustyökalu.</strong> Aloittaminen ei maksa mitään.</li>
+        <li><strong>Usean lähteen data yhdessä näkymässä.</strong> Google Ads, GA4, Search Console, Sheets ja BigQuery samassa raportissa.</li>
+        <li><strong>Päivittyy automaattisesti.</strong> Ei manuaalista kuukausiraportointia.</li>
+        <li><strong>Helppo jakaa.</strong> Jakolinkki tai ajastettu PDF sähköpostiin.</li>
+        <li><strong>Suodattimet ja vertailu.</strong> Vertaa edelliseen jaksoon ja rajaa kanavan tai kampanjan mukaan.</li>
+        <li><strong>Ei koodaamista.</strong> Raportin rakentaminen onnistuu selaimessa vetämällä ja pudottamalla.</li>
+      </ol>
+    </aside>
+
+    <p>Nimestä vielä: Data Studio tunnettiin aiemmin nimellä Looker Studio ja sitä ennen Google Data Studio. Jos etsit ohjeita millä tahansa näistä nimistä, olet oikeassa paikassa. Jos haluat suoraan päätöksen, hyppää kohtaan <a href="#tee-itse-vai-teeta">Tee itse vai teetä</a>.</p>
+
+    <nav class="toc" aria-label="Sisällys">
+      <h2>Sisällys</h2>
+      <ol>
+        <li><a href="#mika-data-studio-on">Mikä Data Studio on</a></li>
+        <li><a href="#hyodyt">Data Studio -raportin hyödyt tarkemmin</a></li>
+        <li><a href="#datalahteet">Mitä dataa raporttiin voi yhdistää</a></li>
+        <li><a href="#hyva-raportti">Millainen on hyvä Data Studio -raportti</a></li>
+        <li><a href="#ensimmainen-raportti">Näin teet ensimmäisen raportin</a></li>
+        <li><a href="#virheet">Yleisimmät virheet</a></li>
+        <li><a href="#rajoitteet">Rajoitteet ja sudenkuopat</a></li>
+        <li><a href="#tee-itse-vai-teeta">Tee itse vai teetä</a></li>
+        <li><a href="#ukk">Usein kysytyt kysymykset</a></li>
+      </ol>
+    </nav>
+
+    <h2 id="mika-data-studio-on">Mikä Data Studio on</h2>
+    <p>Data Studio on Googlen selaimessa toimiva raportointityökalu. Yhdistät siihen datalähteitä, valitset mittarit ja rakennat niistä kaavioita, taulukoita ja lukukortteja. Raportit tallentuvat Google-tilisi alle, ja voit jakaa ne muille aivan kuten Google-dokumentin.</p>
+
+    <h3>Nimihistoria lyhyesti</h3>
+    <p>Työkalu on vaihtanut nimeä kahdesti, mikä on sotkenut hakutuloksia ja ohjeita:</p>
+    <ul>
+      <li><strong>Google Data Studio</strong> vuodesta 2016</li>
+      <li><strong>Looker Studio</strong> lokakuusta 2022</li>
+      <li><strong>Data Studio</strong> huhtikuusta 2026, kun Google palautti alkuperäisen nimen (<a href="https://cloud.google.com/blog/products/data-analytics/looker-studio-is-data-studio" target="_blank" rel="noopener">Google Cloud Blog</a>)</li>
+    </ul>
+    <p>Vanhat Looker Studio -ohjeet kuvaavat siis samaa työkalua, mutta niiden kuvakaappaukset ja valikkonimet voivat olla vanhentuneita. Googlen mukaan olemassa olevat raportit, datalähteet ja käyttäjät siirtyvät uuteen kokemukseen automaattisesti ilman toimenpiteitä.</p>
+
+    <h3>Data Studio ja Data Studio Pro</h3>
+    <p>Samalla tuote jaettiin kahteen versioon. Ilmainen <strong>Data Studio</strong> on tarkoitettu yksittäiseen analyysiin sekä nopeiden raporttien tekemiseen ja jakamiseen. Maksullinen <strong>Data Studio Pro</strong> on suunnattu tiimeille ja organisaatioille: siinä on enemmän hallintaa, tekoälyominaisuuksia ja syvempi integraatio Google Cloudiin. Pro-lisenssin voi Googlen mukaan ostaa Google Cloud -konsolista tai Google Workspacen hallintakonsolista. Hinnoittelu kannattaa tarkistaa suoraan Googlelta, koska se voi muuttua.</p>
+    <p>Useimmille pienille ja keskisuurille yrityksille ilmainen Data Studio riittää hyvin. Pro tulee kyseeseen vasta, kun raportteja ylläpitää useampi ihminen ja tarvitaan keskitettyä hallintaa.</p>
+
+    <h2 id="hyodyt">Data Studio -raportin hyödyt tarkemmin</h2>
+
+    <h3>1. Kaikki luvut yhdessä paikassa</h3>
+    <p>Ilman raporttia mainoskulut ovat Google Adsissa, kävijämäärät GA4:ssä ja hakunäkyvyys Search Consolessa. Data Studiossa ne ovat yhdessä näkymässä. Käytännön esimerkki: mainoskulut ja liidit rinnakkain samalla sivulla, jolloin näet suoraan, paljonko yksi liidi maksaa. Kolmea välilehteä ei tarvitse avata.</p>
+
+    <h3>2. Automaattinen päivitys säästää aikaa</h3>
+    <p>Kun datalähteet on kytketty, raportti hakee tuoreet luvut itse. Kuukausiraportti ei ole enää käsityötä, jossa lukuja kopioidaan taulukkoon. Huomaa kuitenkin, että data ei ole reaaliaikaista. Googlen ohjekeskuksen mukaan Googlen markkinointi- ja mittaustuotteet, kuten Google Ads ja Search Console, päivittyvät 12 tunnin välein, eikä tätä nopeutta voi muuttaa. Google Sheets päivittyy oletuksena 15 minuutin välein, ja osalle muista lähteistä päivitysvälin voi valita datalähteen asetuksista. Raportin muokkaaja voi lisäksi päivittää datan käsin milloin tahansa, ja katselijatkin voivat tehdä sen, jos asetus on sallittu (<a href="https://docs.cloud.google.com/looker/docs/studio/manage-data-freshness" target="_blank" rel="noopener">Googlen ohje datan tuoreudesta</a>).</p>
+    <p>Käytännössä tämä tarkoittaa, että raportti sopii viikko- ja kuukausiseurantaan, mutta ei minuutti- tai tuntitason päätöksiin. Jos kampanjan luvut pitää nähdä juuri nyt, katso ne suoraan Google Adsista.</p>
+
+    <h3>3. Helppo jakaa ja seurata</h3>
+    <p>Raportin voi jakaa linkkinä ja säätää oikeudet erikseen: toiselle vain katselu, toiselle muokkaus. Raportin voi myös ajastaa lähtemään PDF-tiedostona sähköpostiin esimerkiksi joka maanantai. Johtoryhmä tai asiakas saa luvut ilman, että kukaan muistaa lähettää niitä.</p>
+    <p>Googlen ohjeen mukaan ajastettu viesti sisältää raportin PDF-liitteenä sekä esikatselun ensimmäisestä sivusta ja linkin koko raporttiin. Yhdellä ajastuksella voi olla enintään 50 vastaanottajaa. Ilmaisessa versiossa raportille voi tehdä yhden ajastuksen ja lähetys on enintään kerran päivässä. Data Studio Prossa lähetys voi tapahtua kerran tunnissa ja viestin voi lähettää myös Google Chatiin tai Slackiin (<a href="https://docs.cloud.google.com/looker/docs/studio/schedule-automatic-report-delivery" target="_blank" rel="noopener">Googlen ohje ajastetusta toimituksesta</a>).</p>
+
+    <h3>4. Vertailu ja suodatus</h3>
+    <p>Aikajaksojen vertailu edelliseen kuukauteen tai vuoteen sekä kanava- ja kampanjasuodattimet tekevät raportista työkalun eivätkä pelkän kuvan. Poikkeamat, kuten yhtäkkiä kallistuneet klikit tai pudonnut konversiomäärä, näkyvät nopeasti.</p>
+
+    <h3>5. Ilmainen aloitus ja matala kynnys</h3>
+    <p>Perustyökalun käyttö on ilmaista. Kustannus tulee yleensä suunnittelusta, joko omasta ajastasi tai tekijän työstä, sekä joskus maksullisista connectoreista, joista lisää alempana.</p>
+
+    <h3>6. Räätälöitävyys liiketoiminnan mittareihin</h3>
+    <p>Hyvä raportti ei näytä kaikkea, vaan ne muutamat mittarit, joilla tehdään päätöksiä. Yritys, joka myy verkossa, tarvitsee eri raportin kuin yritys, joka kerää yhteydenottoja. Data Studio taipuu molempiin, koska mittarit ja rakenne valitset itse.</p>
+
+    <!-- KUVA (pääkuva, ylös): anonymisoitu esimerkkiraportti, jossa Google Ads + GA4 -luvut. Alt: "Data Studio -raportti, jossa Google Adsin kulut ja GA4:n konversiot samassa näkymässä" -->
+
+    <h2 id="datalahteet">Mitä dataa raporttiin voi yhdistää</h2>
+    <p>Googlen omat lähteet, kuten Google Ads, GA4, Search Console, YouTube, Google Sheets ja BigQuery, saa yleensä yhdistettyä ilman lisäkustannusta. Sheets toimii myös siltana: jos datasi on jossain muualla, sen voi usein viedä taulukkoon ja lukea sieltä.</p>
+    <p>Kolmannen osapuolen lähteet, kuten Meta Ads, CRM tai verkkokauppa-alusta, vaativat usein erillisen connectorin eli liittimen, jolla data siirtyy työkaluun. Osa niistä on maksullisia, ja niiden laatu ja ylläpito vaihtelevat. Tämä on tavallisin yllätyskulu: raportti on ilmainen, mutta kaikkien lähteiden tuominen siihen ei aina ole ilmaista. Tarkista connectorin nykyinen hinta ja saatavuus sen tarjoajalta ennen kuin lupaat raporttia kenellekään.</p>
+
+    <h2 id="hyva-raportti">Millainen on hyvä Data Studio -raportti</h2>
+    <p>Aloita kysymyksistä ja päätöksistä, älä kaavioista. Kysy: mitä päätöstä tämän raportin pitäisi tukea? Kannattaako mainosbudjettia nostaa? Mikä kanava tuo liidejä? Vasta kun tiedät vastaukset, valitse mittarit.</p>
+    <p>Esimerkkirakenne Data Studio Google Ads + GA4 -raportille:</p>
+    <ol>
+      <li><strong>Tiivistelmäsivu:</strong> kulut, konversiot ja hinta per konversio edelliseen jaksoon verrattuna.</li>
+      <li><strong>Kampanjataso:</strong> mikä kampanja tuottaa ja mikä vain kuluttaa.</li>
+      <li><strong>Hakusanat ja hakutermit:</strong> millä hauilla mainoksesi näkyvät ja mitkä niistä tuottavat konversioita.</li>
+      <li><strong>Verkkosivun käyttäytyminen:</strong> mitä mainoksista tulevat kävijät sivustolla tekevät.</li>
+    </ol>
+    <p>Raportin pitää olla myös kevyt. Hitaan raportin yleisimmät syyt ovat raskaat kyselyt, datalähteiden kiintiörajoitukset ja liian monta kaaviota samalla sivulla. Mittarien määrittelystä kerron lisää alempana.</p>
+
+    <h3>Mitä Google Ads -raportissa kannattaa seurata</h3>
+    <p>Google Ads -asiantuntijan näkökulmasta raportin ydin on harvoja lukuja: kulut, konversiot, hinta per konversio ja, jos konversioille on arvo, konversioarvo suhteessa kuluihin. Klikkausmäärä ja näyttökerrat ovat tukilukuja, eivät tavoitteita. Jos raportissa on kymmenen kaaviota mutta hinta per konversio ei erotu, raportti ei vielä auta päättämään mitään.</p>
+
+    <h3>Sovi mittarit ennen kaavioita</h3>
+    <p>Raportin luotettavuus ratkeaa mittarien määrittelyssä. Kirjoita ylös, mitä kukin luku tarkoittaa, ennen kuin rakennat mitään:</p>
+    <ul>
+      <li><strong>Konversio:</strong> mikä tapahtuma lasketaan? Lomakelähetys, puhelu, ostos vai jokin niistä yhdessä?</li>
+      <li><strong>Hinta per konversio:</strong> kulut jaettuna konversioilla. Mistä lähteestä kulut ja konversiot tulevat, Adsista vai GA4:stä?</li>
+      <li><strong>Aikajakso:</strong> kalenterikuukausi vai viimeiset 30 päivää? Sama luku voi näyttää eri arvon kahdessa raportissa pelkästään aikavalinnan takia.</li>
+      <li><strong>Vertailujakso:</strong> edellinen jakso vai sama jakso vuotta aiemmin? Kausivaihtelevassa liiketoiminnassa jälkimmäinen kertoo enemmän.</li>
+    </ul>
+    <p>Kun määritelmät ovat sivun alareunassa tai erillisellä ohjesivulla, raportin lukija ei joudu arvaamaan. Se säästää enemmän kysymyksiä kuin yksikään lisäkaavio.</p>
+
+    <h2 id="ensimmainen-raportti">Näin teet ensimmäisen Data Studio -raportin</h2>
+    <p>Seuraava ohje on tarkoituksella yleisluontoinen, koska työkalun käyttöliittymä on uudistunut ja valikkojen nimet muuttuvat. Perusrakenne pysyy samana.</p>
+    <ol class="steps">
+      <li><strong>Päätä kysymykset.</strong> Kirjoita ylös kolme kysymystä, joihin raportin pitää vastata.</li>
+      <li><strong>Luo uusi tyhjä raportti</strong> Google-tililläsi Data Studiossa.</li>
+      <li><strong>Yhdistä datalähde.</strong> Valitse esimerkiksi Google Ads tai GA4 ja anna raportille lupa lukea tiliä.</li>
+      <li><strong>Lisää tiivistelmän luvut.</strong> Lukukortit kuluista, konversioista ja hinnasta per konversio.</li>
+      <li><strong>Lisää aikajakso ja vertailu.</strong> Aikavalinta ja vertailu edelliseen jaksoon kertovat, onko luku hyvä vai huono.</li>
+      <li><strong>Lisää kampanjataulukko ja trendikaavio.</strong> Nämä näyttävät, mikä liikuttaa lukuja.</li>
+      <li><strong>Jaa raportti.</strong> Jaa linkillä ja säädä oikeudet. Ajasta tarvittaessa PDF sähköpostiin.</li>
+    </ol>
+    <!-- KUVA 1: raportin tiivistelmäsivu (oma kuvakaappaus uudesta käyttöliittymästä). Alt: "Data Studio -raportin tiivistelmäsivu, jossa kulut, konversiot ja hinta per konversio" -->
+    <!-- KUVA 2: datalähteen kytkentä. Alt: "Datalähteen yhdistäminen Data Studio -raporttiin" -->
+    <!-- KUVA 3: jakoasetukset. Alt: "Data Studio -raportin jakoasetukset ja käyttöoikeudet" -->
+    <!-- KUVA 4: ajastettu PDF. Alt: "Data Studio -raportin ajastettu PDF-lähetys sähköpostiin" -->
+
+    <h2 id="virheet">Yleisimmät virheet Data Studio -raporteissa</h2>
+    <p>Useimmat raportit epäonnistuvat samoista syistä. Nämä virheet toistuvat usein:</p>
+    <ul>
+      <li><strong>Liikaa kaavioita.</strong> Kun sivulla on kaksitoista kaaviota, lukija ei tiedä mihin katsoa. Yksi sivu, yksi kysymys.</li>
+      <li><strong>Mittarit ilman selitystä.</strong> Jos "konversio" tarkoittaa eri asiaa Adsissa ja GA4:ssä, raportti aiheuttaa enemmän keskustelua kuin päätöksiä.</li>
+      <li><strong>Ei vertailua.</strong> Luku ilman vertailua edelliseen jaksoon ei kerro, onko se hyvä vai huono.</li>
+      <li><strong>Raportti ilman omistajaa.</strong> Kun kukaan ei vastaa raportista, datalähteet katkeavat ja luvut alkavat vanheta huomaamatta.</li>
+      <li><strong>Käyttöoikeudet jäävät miettimättä.</strong> Datalähteen tunnistetiedoissa valitaan, käyttääkö raportti omistajan vai katselijan oikeuksia. Valinta kannattaa tehdä tietoisesti ennen kuin raportti jaetaan.</li>
+      <li><strong>Raporttia ei päivitetä.</strong> Yritys, kampanjat ja tavoitteet muuttuvat. Raportti, jota ei tarkisteta puolen vuoden välein, alkaa mitata vanhoja asioita.</li>
+    </ul>
+
+    <h2 id="rajoitteet">Data Studion rajoitteet ja sudenkuopat</h2>
+    <p>Data Studio ei ole täydellinen, ja rajoitteet on parempi tietää etukäteen.</p>
+    <ul>
+      <li><strong>Muokkaus ja kopiointi voivat olla työlästä.</strong> Suuren raportin muokkaaminen tai kopioiminen uudelle asiakkaalle vie yllättävän paljon aikaa.</li>
+      <li><strong>Maksulliset connectorit.</strong> Kaikki lähteet eivät ole ilmaisia, kuten yllä kävi ilmi.</li>
+      <li><strong>Hidas raportti.</strong> Raskaat datalähteet ja kyselyt hidastavat latautumista.</li>
+      <li><strong>Google Adsin ja GA4:n luvut eivät aina täsmää.</strong> Työkalut mittaavat eri asioita: Ads laskee klikkauksia ja GA4 käyntejä, ja attribuutiomallit sekä konversioiden ajoitus voivat erota. Raportin tekijän pitää osata selittää, miksi luvut eroavat, muuten johto alkaa epäillä koko raporttia.</li>
+    </ul>
+
+    <h3>Miksi Google Adsin ja GA4:n luvut eroavat</h3>
+    <p>Tämä on ylivoimaisesti yleisin kysymys, kun Ads ja GA4 tuodaan samaan raporttiin. Syyt ovat yleensä nämä:</p>
+    <ul>
+      <li><strong>Mitä lasketaan.</strong> Google Ads laskee mainosten klikkauksia, GA4 laskee käyntejä ja tapahtumia sivustolla. Yksi klikkaus ei aina tuota yhtä käyntiä.</li>
+      <li><strong>Attribuutio.</strong> Työkalut voivat kohdistaa konversion eri kanavalle. Sama ostos voi näkyä Adsissa mainoksen ansiona ja GA4:ssä toisen kanavan ansiona.</li>
+      <li><strong>Ajoitus.</strong> Konversio voidaan kirjata klikkauksen tai konversiotapahtuman ajankohdalle. Lyhyellä aikavälillä tämä siirtää lukuja jaksosta toiseen.</li>
+      <li><strong>Mittauksen kattavuus.</strong> Evästesuostumukset ja selaimen estot vaikuttavat eri tavoin eri työkaluihin.</li>
+    </ul>
+    <p>Luvut eivät siis välttämättä ole virheellisiä, vaan ne vastaavat eri kysymyksiin. Hyvä raportti kertoo, kumpaa lukua käytetään mihinkin päätökseen, ja pitää sen linjan koko ajan.</p>
+
+    <h2 id="tee-itse-vai-teeta">Tee itse vai teetä: milloin raportin tekijä kannattaa</h2>
+    <div class="compare">
+      <div class="compare-card">
+        <h3>Tee itse, jos</h3>
+        <ul>
+          <li>lähteitä on yksi tai kaksi</li>
+          <li>tarve on yksinkertainen</li>
+          <li>sinulla on aikaa opetella</li>
+        </ul>
+      </div>
+      <div class="compare-card compare-card-accent">
+        <h3>Teetä, jos</h3>
+        <ul>
+          <li>yhdistät Adsin, GA4:n ja CRM:n</li>
+          <li>tulokset menevät johdolle tai asiakkaille</li>
+          <li>luvut eivät täsmää keskenään</li>
+        </ul>
+      </div>
+    </div>
+    <p>Kun tilaat raportin tekijältä, kannattaa sopia viidestä asiasta: mittarien määrittely, datalähteiden kytkentä, raportin rakenne, käyttöoikeudet ja opastus raportin käyttöön. Erityisesti mittarien määrittely ratkaisee, onko raportista hyötyä vai vain kauniita kaavioita.</p>
+    <p>Räätälöity Data Studio -raportointi sisältyy <a href="/#paketit">Kumppani-pakettiin</a>, ja muissa <a href="/">Google Ads -konsultoinnin</a> paketeissa se on lisäpalvelu. Jos et ole varma, tarvitsetko Data Studio -raportin tekijää, <a href="/yhteydenotto">ota yhteyttä</a>, niin kerron rehellisesti, riittääkö oma tekeminen.</p>
+
+    <h2 id="ukk">Usein kysytyt kysymykset</h2>
+    <div class="faq">
+      <details>
+        <summary>Onko Data Studio ilmainen?</summary>
+        <p>Perustyökalu on ilmainen. Maksullinen Data Studio Pro on tarkoitettu tiimeille ja organisaatioille. Lisäksi osa kolmannen osapuolen connectoreista voi olla maksullisia.</p>
+      </details>
+      <details>
+        <summary>Onko Data Studio sama kuin Looker Studio?</summary>
+        <p>Kyllä. Google nimesi Looker Studion takaisin Data Studioksi huhtikuussa 2026. Tuote on sama, ja olemassa olevat raportit siirtyvät Googlen mukaan uuteen kokemukseen automaattisesti. Looker on eri tuote: se on Googlen yritystason raportointi- ja analytiikka-alusta (BI).</p>
+      </details>
+      <details>
+        <summary>Mitä eroa on Data Studiolla ja Data Studio Prolla?</summary>
+        <p>Data Studio on ilmainen työkalu yksittäiseen analyysiin ja raporttien jakamiseen. Data Studio Pro on maksullinen versio tiimeille: siinä on enemmän hallintaa, tekoälyominaisuuksia ja Google Cloud -integraatio. Tarkista ajantasaiset ominaisuudet ja hinnat Googlelta.</p>
+      </details>
+      <details>
+        <summary>Voiko Google Adsin ja GA4:n datan yhdistää samaan raporttiin?</summary>
+        <p>Kyllä. Molemmat ovat Googlen omia datalähteitä, ja ne voi tuoda samaan raporttiin. Luvut voivat silti erota, koska työkalut mittaavat eri tavoin.</p>
+      </details>
+      <details>
+        <summary>Päivittyykö Data Studio -raportti reaaliajassa?</summary>
+        <p>Ei. Googlen ohjekeskuksen mukaan Google Ads ja Search Console päivittyvät 12 tunnin välein, eikä sitä voi muuttaa. Raportin muokkaaja voi päivittää datan käsin. Tuoreet päätöstason luvut kannattaa katsoa suoraan Google Adsista.</p>
+      </details>
+      <details>
+        <summary>Voiko Data Studio -raportin ajastaa sähköpostiin?</summary>
+        <p>Kyllä. Raportista voi ajastaa PDF-liitteen sähköpostiin. Ilmaisessa versiossa lähetys on enintään kerran päivässä, ja Data Studio Prossa se voi olla kerran tunnissa.</p>
+      </details>
+      <details>
+        <summary>Kuinka nopeasti Data Studio -raportti valmistuu?</summary>
+        <p>Yksinkertaisen yhden lähteen raportin saa pystyyn tunnissa tai parissa. Useamman lähteen raportti, jossa mittarit on määritelty kunnolla, vie selvästi pidempään. Suurin osa ajasta kuluu suunnitteluun, ei klikkailuun.</p>
+      </details>
+      <details>
+        <summary>Milloin kannattaa käyttää raportin tekijää?</summary>
+        <p>Kun lähteitä on useita, raportti menee johdolle tai asiakkaille tai Adsin ja GA4:n luvut eivät täsmää. Silloin tekijän työ tuo mukanaan luvut, joihin voi luottaa.</p>
+      </details>
+      <details>
+        <summary>Paljonko Data Studio -raportin teettäminen maksaa?</summary>
+        <p>Brander Digitalin Data Studio -raportointi sisältyy Kumppani-pakettiin. Muissa paketeissa se on lisäpalvelu hintaan 59 €/kk (ALV 0 %). Hinta kattaa raportin ylläpidon ja esimerkiksi Supermetrics-lisenssimaksun, joten kolmannen osapuolen connectorin kustannus sisältyy hintaan. Muilla tarjoajilla hinnat ja sisällöt vaihtelevat, joten vertaa aina, mitä hinta pitää sisällään.</p>
+      </details>
+    </div>
+
+    <h2>Yhteenveto</h2>
+    <p>Data Studio -raportin kolme tärkeintä hyötyä ovat ilmainen aloitus, usean lähteen luvut yhdessä näkymässä ja automaattinen päivitys, joka poistaa käsin tehtävän raportoinnin. Rajoitteet, kuten maksulliset connectorit ja lukujen eroavuudet, kannattaa tuntea etukäteen. Jos raportti on tärkeä tai luvut eivät täsmää, tekijästä on hyötyä.</p>
+
+    <div class="cta-box article-cta">
+      <div class="cta-shine"></div>
+      <h2>Haluatko selkeän raportin Google Ads -luvuistasi?</h2>
+      <p>Käyn mainostilisi läpi maksuttomassa auditoinnissa ja kerron, mitä raportin pitäisi näyttää.</p>
+      <a href="/yhteydenotto" class="btn-secondary" onclick="if(window.dataLayer){window.dataLayer.push({event:'cta_click',cta_location:'article_data_studio'});}">Tilaa maksuton auditointi</a>
+    </div>
+  </div>
+</article>
+</main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-logo">
+          <span class="nav-logo-dot"></span>
+          <span class="nav-logo-text">Brander <span>Digital</span></span>
+        </div>
+        <p class="footer-tagline">Senior-tason Google Ads -osaamista yrityksesi käyttöön – suoraan asiantuntijalta, ilman välikäsiä tai junior-tekijöitä.</p>
+      </div>
+      <div>
+        <div class="footer-nav-title">Navigaatio</div>
+        <div class="footer-links">
+          <a href="/#paketit">Paketit</a>
+          <a href="/#minusta">Minusta</a>
+          <a href="/#linkedin">LinkedIn</a>
+          <a href="/#prosessi">Prosessi</a>
+          <a href="/#ukk">UKK</a>
+          <a href="/data-studio-raportti">Data Studio -opas</a>
+          <a href="/yhteydenotto" onclick="if(window.dataLayer){window.dataLayer.push({event:'cta_click',cta_location:'footer_nav'});}">Yhteydenotto</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-contact-title">Yhteystiedot</div>
+        <a href="mailto:viktor@branderdigital.fi" class="footer-contact-email" onclick="if(window.dataLayer){window.dataLayer.push({event:'email_click',link_location:'footer'});}">viktor@branderdigital.fi</a>
+        <a href="https://www.linkedin.com/in/viktorbrander/" target="_blank" rel="noopener" class="footer-contact-email" style="display:flex;align-items:center;gap:0.4rem;margin-top:0.5rem" onclick="if(window.dataLayer){window.dataLayer.push({event:'linkedin_click',link_location:'footer'});}"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn-profiili</a>
+        <a href="#" class="footer-contact-email footer-phone-reveal" style="display:flex;align-items:center;gap:0.4rem;margin-top:0.5rem" onclick="revealFooterPhone(this); return false;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span>Näytä puhelinnumero</span></a>
+        <p style="margin-top:0.75rem;font-size:0.75rem;color:var(--muted-fg)">Vastausaika työpäivän sisällä yhteydenotosta.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-bottom-inner">
+        <div>© <span id="year"></span> Brander Digital. Kaikki oikeudet pidätetään.</div>
+        <div>Sertifioitu Google Ads -asiantuntija</div>
+      </div>
+
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  document.querySelectorAll('.year-footer').forEach(el => el.textContent = new Date().getFullYear());
+
+  function revealFooterPhone(link) {
+    const number = '040 7766 233';
+    const telNumber = '+358407766233';
+    link.setAttribute('href', 'tel:' + telNumber);
+    link.querySelector('span').textContent = number;
+    link.removeAttribute('onclick');
+    if (window.dataLayer) {
+      window.dataLayer.push({ event: 'phone_number_reveal', link_location: 'footer' });
+    }
+</body>
+</html>

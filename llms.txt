@@ -8,6 +8,7 @@ Brander Digital on Viktor Branderin luotsaama Google Ads -konsultointipalvelu. P
 
 - [Etusivu](https://branderdigital.fi/): Palvelukuvaus, paketit ja hinnat, prosessi ja usein kysytyt kysymykset.
 - [Yhteydenotto](https://branderdigital.fi/yhteydenotto): Maksuttoman auditoinnin tilaaminen.
+- [Data Studio -raportti](https://branderdigital.fi/data-studio-raportti): Opas Data Studio -raporttiin: hyödyt, rajoitteet ja milloin raportin tekijä kannattaa.
 
 ## Yhteystiedot
 
