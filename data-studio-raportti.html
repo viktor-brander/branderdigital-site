@@ -10,10 +10,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Data Studio -raportti (ent. Looker Studio): hyödyt ja tekijä</title>
-  <meta name="description" content="Data Studio (entinen Looker Studio) kokoaa Google Adsin, GA4:n ja muut luvut yhteen ilmaiseen raporttiin. Lue hyödyt, rajoitteet ja milloin tekijä kannattaa." />
+  <meta name="description" content="Data Studio (entinen Looker Studio) päivittyy automaattisesti Google Adsista, GA4:stä ja muilta mainosalustoilta. Näin yhdistät ne ja milloin tekijä kannattaa." />
   <meta name="author" content="Viktor Brander" />
   <meta property="og:title" content="Data Studio -raportti (entinen Looker Studio): 6 hyötyä ja milloin tarvitset tekijän" />
-  <meta property="og:description" content="Data Studio (entinen Looker Studio) kokoaa Google Adsin, GA4:n ja muut luvut yhteen ilmaiseen raporttiin. Lue hyödyt, rajoitteet ja milloin tekijä kannattaa." />
+  <meta property="og:description" content="Data Studio (entinen Looker Studio) päivittyy automaattisesti Google Adsista, GA4:stä ja muilta mainosalustoilta. Näin yhdistät ne ja milloin tekijä kannattaa." />
   <meta property="og:type" content="article" />
   <meta property="og:locale" content="fi_FI" />
   <meta property="og:url" content="https://branderdigital.fi/data-studio-raportti" />
@@ -235,6 +235,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .toc a { text-decoration: none; }
     .toc li { font-size: 0.9375rem; margin-top: 0.25rem; }
     .steps li { padding-left: 0.25rem; }
+    .answer { margin-top: 1.25rem; padding: 1.25rem 1.5rem; border-left: 4px solid var(--primary); background: var(--surface-soft); border-radius: 0 var(--radius) var(--radius) 0; }
+    .answer p { margin-top: 0; }
+    .table-wrap { margin-top: 1.25rem; overflow-x: auto; border: 1px solid var(--border); border-radius: var(--radius); }
+    .article table { width: 100%; min-width: 36rem; border-collapse: collapse; font-size: 0.9375rem; }
+    .article th, .article td { padding: 0.75rem 1rem; text-align: left; vertical-align: top; border-bottom: 1px solid var(--border); line-height: 1.5; }
+    .article th { background: var(--surface-soft); font-family: 'Outfit', sans-serif; font-weight: 600; }
+    .article tr:last-child td { border-bottom: none; }
+    @media(max-width:639px) {
+      .table-wrap { overflow: visible; border: none; }
+      .article table, .article tbody, .article tr, .article td { display: block; min-width: 0; width: 100%; }
+      .article thead { display: none; }
+      .article tr { margin-top: 1rem; border: 1px solid var(--border); border-radius: var(--radius); background: var(--card); overflow: hidden; }
+      .article td { border-bottom: 1px solid var(--border); padding: 0.75rem 1rem; }
+      .article tr td:first-child { background: var(--surface-soft); font-family: 'Outfit', sans-serif; }
+      .article tr td:last-child { border-bottom: none; }
+      .article td[data-label]:not(:first-child)::before { content: attr(data-label); display: block; margin-bottom: 0.15rem; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted-fg); }
+    }
     .compare { margin-top: 1.5rem; display: grid; grid-template-columns: 1fr; gap: 1rem; }
     @media(min-width:640px) { .compare { grid-template-columns: 1fr 1fr; } }
     .compare-card { padding: 1.25rem 1.5rem; border: 1px solid var(--border); border-radius: var(--radius); background: var(--card); }
@@ -252,7 +269,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   </style>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@graph":[
-    {"@type":"Article","headline":"Data Studio -raportti (entinen Looker Studio): 6 hyötyä ja milloin tarvitset tekijän","description":"Data Studio (entinen Looker Studio) kokoaa Google Adsin, GA4:n ja muut luvut yhteen ilmaiseen raporttiin. Lue hyödyt, rajoitteet ja milloin tekijä kannattaa.","inLanguage":"fi","mainEntityOfPage":"https://branderdigital.fi/data-studio-raportti","image":"https://branderdigital.fi/og-image.png","datePublished":"2026-09-21","dateModified":"2026-09-21","author":{"@type":"Person","name":"Viktor Brander","url":"https://www.linkedin.com/in/viktorbrander/"},"publisher":{"@type":"Organization","name":"Brander Digital","url":"https://branderdigital.fi/"}},
+    {"@type":"Article","headline":"Data Studio -raportti (entinen Looker Studio): 6 hyötyä ja milloin tarvitset tekijän","description":"Data Studio (entinen Looker Studio) päivittyy automaattisesti Google Adsista, GA4:stä ja muilta mainosalustoilta. Näin yhdistät ne ja milloin tekijä kannattaa.","inLanguage":"fi","mainEntityOfPage":"https://branderdigital.fi/data-studio-raportti","image":"https://branderdigital.fi/og-image.png","datePublished":"2026-09-21","dateModified":"2026-09-25","author":{"@type":"Person","name":"Viktor Brander","url":"https://www.linkedin.com/in/viktorbrander/"},"publisher":{"@type":"Organization","name":"Brander Digital","url":"https://branderdigital.fi/"}},
     {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Etusivu","item":"https://branderdigital.fi/"},{"@type":"ListItem","position":2,"name":"Data Studio -raportti","item":"https://branderdigital.fi/data-studio-raportti"}]}
   ]}
   </script>
@@ -291,10 +308,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <header class="article-header">
       <p class="section-tag">Opas</p>
       <h1>Data Studio -raportti (entinen Looker Studio): 6 hyötyä ja milloin tarvitset tekijän</h1>
-      <p class="byline">Kirjoittanut <a href="https://www.linkedin.com/in/viktorbrander/" target="_blank" rel="noopener">Viktor Brander</a>, Brander Digital · Julkaistu <time datetime="2026-09-21">21.9.2026</time> · Päivitetty <time datetime="2026-09-21">21.9.2026</time></p>
+      <p class="byline">Kirjoittanut <a href="https://www.linkedin.com/in/viktorbrander/" target="_blank" rel="noopener">Viktor Brander</a>, Brander Digital · Julkaistu <time datetime="2026-09-21">21.9.2026</time> · Päivitetty <time datetime="2026-09-25">25.9.2026</time></p>
     </header>
 
-    <p class="lead">Data Studio kokoaa markkinoinnin ja verkkosivun luvut yhteen automaattisesti päivittyvään näkymään, ja perustyökalu on ilmainen. Tässä oppaassa käyn läpi hyödyt, rajoitteet ja sen, milloin raportin kannattaa antaa tekijälle.</p>
+    <p class="lead">Data Studio kokoaa markkinoinnin ja verkkosivun luvut yhteen automaattisesti päivittyvään näkymään, ja perustyökalu on ilmainen. Tässä oppaassa käyn läpi hyödyt, datan tuomisen raporttiin ja sen, milloin raportin kannattaa antaa tekijälle.</p>
 
     <aside class="tldr" aria-label="Hyödyt lyhyesti">
       <h2>Data Studio -raportin hyödyt lyhyesti</h2>
@@ -308,25 +325,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </ol>
     </aside>
 
-    <p>Nimestä vielä: Data Studio tunnettiin aiemmin nimellä Looker Studio ja sitä ennen Google Data Studio. Jos etsit ohjeita millä tahansa näistä nimistä, olet oikeassa paikassa. Jos haluat suoraan päätöksen, hyppää kohtaan <a href="#tee-itse-vai-teeta">Tee itse vai teetä</a>.</p>
+    <p>Nimestä vielä: Data Studio tunnettiin aiemmin nimellä Looker Studio ja sitä ennen Google Data Studio. Jos etsit ohjeita millä tahansa näistä nimistä, olet oikeassa paikassa. Jos haluat tietää, miten usean mainosalustan data saadaan raporttiin ja päivittymään automaattisesti, hyppää kohtaan <a href="#data-raporttiin">Näin data pääsee raporttiin</a>. Jos haluat suoraan päätöksen, hyppää kohtaan <a href="#tee-itse-vai-teeta">Tee itse vai teetä</a>.</p>
 
     <nav class="toc" aria-label="Sisällys">
       <h2>Sisällys</h2>
       <ol>
         <li><a href="#mika-data-studio-on">Mikä Data Studio on</a></li>
         <li><a href="#hyodyt">Data Studio -raportin hyödyt tarkemmin</a></li>
-        <li><a href="#datalahteet">Mitä dataa raporttiin voi yhdistää</a></li>
         <li><a href="#hyva-raportti">Millainen on hyvä Data Studio -raportti</a></li>
+        <li><a href="#data-raporttiin">Näin data pääsee raporttiin</a></li>
         <li><a href="#ensimmainen-raportti">Näin teet ensimmäisen raportin</a></li>
-        <li><a href="#virheet">Yleisimmät virheet</a></li>
-        <li><a href="#rajoitteet">Rajoitteet ja sudenkuopat</a></li>
+        <li><a href="#rajoitteet">Sudenkuopat ja rajoitteet</a></li>
         <li><a href="#tee-itse-vai-teeta">Tee itse vai teetä</a></li>
         <li><a href="#ukk">Usein kysytyt kysymykset</a></li>
       </ol>
     </nav>
 
     <h2 id="mika-data-studio-on">Mikä Data Studio on</h2>
-    <p>Data Studio on Googlen selaimessa toimiva raportointityökalu. Yhdistät siihen datalähteitä, valitset mittarit ja rakennat niistä kaavioita, taulukoita ja lukukortteja. Raportit tallentuvat Google-tilisi alle, ja voit jakaa ne muille aivan kuten Google-dokumentin.</p>
+    <p>Data Studio on Googlen selaimessa toimiva raportointityökalu. Yhdistät siihen datalähteitä, valitset mittarit ja rakennat niistä kaavioita, taulukoita ja lukukortteja vetämällä ja pudottamalla, ilman koodausta. Raportit tallentuvat Google-tilisi alle, ja voit jakaa ne muille kuten Google-dokumentin.</p>
 
     <h3>Nimihistoria lyhyesti</h3>
     <p>Työkalu on vaihtanut nimeä kahdesti, mikä on sotkenut hakutuloksia ja ohjeita:</p>
@@ -335,53 +351,39 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <li><strong>Looker Studio</strong> lokakuusta 2022</li>
       <li><strong>Data Studio</strong> huhtikuusta 2026, kun Google palautti alkuperäisen nimen (<a href="https://cloud.google.com/blog/products/data-analytics/looker-studio-is-data-studio" target="_blank" rel="noopener">Google Cloud Blog</a>)</li>
     </ul>
-    <p>Vanhat Looker Studio -ohjeet kuvaavat siis samaa työkalua, mutta niiden kuvakaappaukset ja valikkonimet voivat olla vanhentuneita. Googlen mukaan olemassa olevat raportit, datalähteet ja käyttäjät siirtyvät uuteen kokemukseen automaattisesti ilman toimenpiteitä.</p>
+    <p>Vanhat Looker Studio -ohjeet kuvaavat siis samaa työkalua, mutta niiden kuvakaappaukset ja valikkonimet voivat olla vanhentuneita. Olemassa olevat raportit, datalähteet ja käyttäjät siirtyvät uuteen kokemukseen automaattisesti ilman toimenpiteitä.</p>
 
     <h3>Data Studio ja Data Studio Pro</h3>
-    <p>Samalla tuote jaettiin kahteen versioon. Ilmainen <strong>Data Studio</strong> on tarkoitettu yksittäiseen analyysiin sekä nopeiden raporttien tekemiseen ja jakamiseen. Maksullinen <strong>Data Studio Pro</strong> on suunnattu tiimeille ja organisaatioille: siinä on enemmän hallintaa, tekoälyominaisuuksia ja syvempi integraatio Google Cloudiin. Pro-lisenssin voi Googlen mukaan ostaa Google Cloud -konsolista tai Google Workspacen hallintakonsolista. Hinnoittelu kannattaa tarkistaa suoraan Googlelta, koska se voi muuttua.</p>
-    <p>Useimmille pienille ja keskisuurille yrityksille ilmainen Data Studio riittää hyvin. Pro tulee kyseeseen vasta, kun raportteja ylläpitää useampi ihminen ja tarvitaan keskitettyä hallintaa.</p>
+    <p>Samalla tuote jaettiin kahteen versioon. Ilmainen <strong>Data Studio</strong> on tarkoitettu yksittäiseen analyysiin sekä nopeiden raporttien tekemiseen ja jakamiseen. Maksullinen <strong>Data Studio Pro</strong> on suunnattu tiimeille ja organisaatioille: siinä on enemmän hallintaa, tekoälyominaisuuksia ja syvempi integraatio Google Cloudiin. Pro-lisenssin voi ostaa Google Cloud -konsolista tai Google Workspacen hallintakonsolista. Hinnoittelu kannattaa tarkistaa suoraan Googlelta, koska se voi muuttua.</p>
+    <p>Omassa kokemuksessani ilmainen Data Studio riittää valtaosalle yrityksistä, myös suurille. Pro tulee kyseeseen vasta, jos tarvitset erityisesti sen ominaisuuksia, kuten keskitettyä hallintaa tai tekoälyominaisuuksia. Ilmaisessakin versiossa kustannus syntyy yleensä raportin suunnittelusta ja joskus maksullisista connectoreista, joista kerron lisää alempana.</p>
 
     <h2 id="hyodyt">Data Studio -raportin hyödyt tarkemmin</h2>
 
     <h3>1. Kaikki luvut yhdessä paikassa</h3>
-    <p>Ilman raporttia mainoskulut ovat Google Adsissa, kävijämäärät GA4:ssä ja hakunäkyvyys Search Consolessa. Data Studiossa ne ovat yhdessä näkymässä. Käytännön esimerkki: mainoskulut ja liidit rinnakkain samalla sivulla, jolloin näet suoraan, paljonko yksi liidi maksaa. Kolmea välilehteä ei tarvitse avata.</p>
+    <p>Ilman raporttia mainoskulut ovat Google Adsissa, kävijämäärät GA4:ssä ja hakunäkyvyys Search Consolessa. Data Studiossa ne ovat yhdessä näkymässä: mainoskulut ja liidit rinnakkain, jolloin näet suoraan, paljonko yksi liidi maksaa. Mittarit ja rakenne valitset itse, joten sama työkalu sopii sekä verkkokaupalle että yritykselle, joka kerää yhteydenottoja.</p>
 
     <h3>2. Automaattinen päivitys säästää aikaa</h3>
-    <p>Kun datalähteet on kytketty, raportti hakee tuoreet luvut itse. Kuukausiraportti ei ole enää käsityötä, jossa lukuja kopioidaan taulukkoon. Huomaa kuitenkin, että data ei ole reaaliaikaista. Googlen ohjekeskuksen mukaan Googlen markkinointi- ja mittaustuotteet, kuten Google Ads ja Search Console, päivittyvät 12 tunnin välein, eikä tätä nopeutta voi muuttaa. Google Sheets päivittyy oletuksena 15 minuutin välein, ja osalle muista lähteistä päivitysvälin voi valita datalähteen asetuksista. Raportin muokkaaja voi lisäksi päivittää datan käsin milloin tahansa, ja katselijatkin voivat tehdä sen, jos asetus on sallittu (<a href="https://docs.cloud.google.com/looker/docs/studio/manage-data-freshness" target="_blank" rel="noopener">Googlen ohje datan tuoreudesta</a>).</p>
-    <p>Käytännössä tämä tarkoittaa, että raportti sopii viikko- ja kuukausiseurantaan, mutta ei minuutti- tai tuntitason päätöksiin. Jos kampanjan luvut pitää nähdä juuri nyt, katso ne suoraan Google Adsista.</p>
+    <p>Kun datalähteet on kytketty, raportti hakee tuoreet luvut itse. Kuukausiraportti ei ole enää käsityötä, jossa lukuja kopioidaan taulukkoon. Data ei kuitenkaan ole reaaliaikaista: esimerkiksi Google Ads päivittyy 12 tunnin välein. Raportti sopii siis viikko- ja kuukausiseurantaan, ei minuutti- tai tuntitason päätöksiin. Päivitysvälit käyn läpi kohdassa <a href="#data-raporttiin">Näin data pääsee raporttiin</a>.</p>
 
     <h3>3. Helppo jakaa ja seurata</h3>
     <p>Raportin voi jakaa linkkinä ja säätää oikeudet erikseen: toiselle vain katselu, toiselle muokkaus. Raportin voi myös ajastaa lähtemään PDF-tiedostona sähköpostiin esimerkiksi joka maanantai. Johtoryhmä tai asiakas saa luvut ilman, että kukaan muistaa lähettää niitä.</p>
-    <p>Googlen ohjeen mukaan ajastettu viesti sisältää raportin PDF-liitteenä sekä esikatselun ensimmäisestä sivusta ja linkin koko raporttiin. Yhdellä ajastuksella voi olla enintään 50 vastaanottajaa. Ilmaisessa versiossa raportille voi tehdä yhden ajastuksen ja lähetys on enintään kerran päivässä. Data Studio Prossa lähetys voi tapahtua kerran tunnissa ja viestin voi lähettää myös Google Chatiin tai Slackiin (<a href="https://docs.cloud.google.com/looker/docs/studio/schedule-automatic-report-delivery" target="_blank" rel="noopener">Googlen ohje ajastetusta toimituksesta</a>).</p>
+    <p>Ajastettu viesti sisältää raportin PDF-liitteenä sekä esikatselun ensimmäisestä sivusta ja linkin koko raporttiin. Yhdellä ajastuksella voi olla enintään 50 vastaanottajaa. Ilmaisessa versiossa raportille voi tehdä yhden ajastuksen ja lähetys on enintään kerran päivässä. Data Studio Prossa lähetys voi tapahtua kerran tunnissa ja viestin voi lähettää myös Google Chatiin tai Slackiin (<a href="https://docs.cloud.google.com/looker/docs/studio/schedule-automatic-report-delivery" target="_blank" rel="noopener">ajastettu toimitus</a>).</p>
 
     <h3>4. Vertailu ja suodatus</h3>
-    <p>Aikajaksojen vertailu edelliseen kuukauteen tai vuoteen sekä kanava- ja kampanjasuodattimet tekevät raportista työkalun eivätkä pelkän kuvan. Poikkeamat, kuten yhtäkkiä kallistuneet klikit tai pudonnut konversiomäärä, näkyvät nopeasti.</p>
-
-    <h3>5. Ilmainen aloitus ja matala kynnys</h3>
-    <p>Perustyökalun käyttö on ilmaista. Kustannus tulee yleensä suunnittelusta, joko omasta ajastasi tai tekijän työstä, sekä joskus maksullisista connectoreista, joista lisää alempana.</p>
-
-    <h3>6. Räätälöitävyys liiketoiminnan mittareihin</h3>
-    <p>Hyvä raportti ei näytä kaikkea, vaan ne muutamat mittarit, joilla tehdään päätöksiä. Yritys, joka myy verkossa, tarvitsee eri raportin kuin yritys, joka kerää yhteydenottoja. Data Studio taipuu molempiin, koska mittarit ja rakenne valitset itse.</p>
-
-    <!-- KUVA (pääkuva, ylös): anonymisoitu esimerkkiraportti, jossa Google Ads + GA4 -luvut. Alt: "Data Studio -raportti, jossa Google Adsin kulut ja GA4:n konversiot samassa näkymässä" -->
-
-    <h2 id="datalahteet">Mitä dataa raporttiin voi yhdistää</h2>
-    <p>Googlen omat lähteet, kuten Google Ads, GA4, Search Console, YouTube, Google Sheets ja BigQuery, saa yleensä yhdistettyä ilman lisäkustannusta. Sheets toimii myös siltana: jos datasi on jossain muualla, sen voi usein viedä taulukkoon ja lukea sieltä.</p>
-    <p>Kolmannen osapuolen lähteet, kuten Meta Ads, CRM tai verkkokauppa-alusta, vaativat usein erillisen connectorin eli liittimen, jolla data siirtyy työkaluun. Osa niistä on maksullisia, ja niiden laatu ja ylläpito vaihtelevat. Tämä on tavallisin yllätyskulu: raportti on ilmainen, mutta kaikkien lähteiden tuominen siihen ei aina ole ilmaista. Tarkista connectorin nykyinen hinta ja saatavuus sen tarjoajalta ennen kuin lupaat raporttia kenellekään.</p>
+    <p>Aikajaksojen vertailu edelliseen kuukauteen tai vuoteen sekä kanava- ja kampanjasuodattimet tekevät raportista työkalun, ei pelkkää kuvaa. Poikkeamat, kuten yhtäkkiä kallistuneet klikit tai pudonnut konversiomäärä, näkyvät nopeasti.</p>
 
     <h2 id="hyva-raportti">Millainen on hyvä Data Studio -raportti</h2>
     <p>Aloita kysymyksistä ja päätöksistä, älä kaavioista. Kysy: mitä päätöstä tämän raportin pitäisi tukea? Kannattaako mainosbudjettia nostaa? Mikä kanava tuo liidejä? Vasta kun tiedät vastaukset, valitse mittarit.</p>
-    <p>Esimerkkirakenne Data Studio Google Ads + GA4 -raportille:</p>
+    <p>Esimerkkirakenne Data Studio -raportille, jossa on Google Ads ja GA4:</p>
     <ol>
       <li><strong>Tiivistelmäsivu:</strong> kulut, konversiot ja hinta per konversio edelliseen jaksoon verrattuna.</li>
       <li><strong>Kampanjataso:</strong> mikä kampanja tuottaa ja mikä vain kuluttaa.</li>
       <li><strong>Hakusanat ja hakutermit:</strong> millä hauilla mainoksesi näkyvät ja mitkä niistä tuottavat konversioita.</li>
       <li><strong>Verkkosivun käyttäytyminen:</strong> mitä mainoksista tulevat kävijät sivustolla tekevät.</li>
     </ol>
-    <p>Raportin pitää olla myös kevyt. Hitaan raportin yleisimmät syyt ovat raskaat kyselyt, datalähteiden kiintiörajoitukset ja liian monta kaaviota samalla sivulla. Mittarien määrittelystä kerron lisää alempana.</p>
 
     <h3>Mitä Google Ads -raportissa kannattaa seurata</h3>
-    <p>Google Ads -asiantuntijan näkökulmasta raportin ydin on harvoja lukuja: kulut, konversiot, hinta per konversio ja, jos konversioille on arvo, konversioarvo suhteessa kuluihin. Klikkausmäärä ja näyttökerrat ovat tukilukuja, eivät tavoitteita. Jos raportissa on kymmenen kaaviota mutta hinta per konversio ei erotu, raportti ei vielä auta päättämään mitään.</p>
+    <p>Google Ads -asiantuntijan näkökulmasta raportin ydin on muutama luku: kulut, konversiot, hinta per konversio ja, jos konversioille on arvo, konversioarvo suhteessa kuluihin. Klikkausmäärä ja näyttökerrat ovat tukilukuja, eivät tavoitteita. Jos raportissa on kymmenen kaaviota mutta hinta per konversio ei erotu, raportti ei vielä auta päättämään mitään.</p>
 
     <h3>Sovi mittarit ennen kaavioita</h3>
     <p>Raportin luotettavuus ratkeaa mittarien määrittelyssä. Kirjoita ylös, mitä kukin luku tarkoittaa, ennen kuin rakennat mitään:</p>
@@ -391,46 +393,94 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <li><strong>Aikajakso:</strong> kalenterikuukausi vai viimeiset 30 päivää? Sama luku voi näyttää eri arvon kahdessa raportissa pelkästään aikavalinnan takia.</li>
       <li><strong>Vertailujakso:</strong> edellinen jakso vai sama jakso vuotta aiemmin? Kausivaihtelevassa liiketoiminnassa jälkimmäinen kertoo enemmän.</li>
     </ul>
-    <p>Kun määritelmät ovat sivun alareunassa tai erillisellä ohjesivulla, raportin lukija ei joudu arvaamaan. Se säästää enemmän kysymyksiä kuin yksikään lisäkaavio.</p>
+    <p>Kun määritelmät on kirjattu sivun alareunaan tai erilliselle ohjesivulle, raportin lukija ei joudu arvaamaan. Se säästää enemmän kysymyksiä kuin yksikään lisäkaavio.</p>
+
+    <h2 id="data-raporttiin">Näin data pääsee raporttiin: Googlen lähteet ja muut mainosalustat</h2>
+    <div class="answer">
+      <p><strong>Lyhyt vastaus:</strong> Kytke jokainen mainosalusta raporttiin datalähteenä ja yhdistä datalähteet samaan raporttiin. Google Ads onnistuu Googlen omalla ilmaisella connectorilla. Meta Ads, LinkedIn Ads ja TikTok Ads tarvitsevat yleensä kolmannen osapuolen connectorin, esimerkiksi Supermetricsin, joka tuo datan raporttiin joko suoraan, Google Sheetsin kautta tai BigQueryn kautta. Kun kytkennät on tehty, raportti hakee tuoreet luvut itse, eikä sitä tarvitse päivittää käsin.</p>
+    </div>
+
+    <h3>Googlen omat lähteet</h3>
+    <p>Google Ads, GA4, Search Console, YouTube, Google Sheets ja BigQuery saa yleensä yhdistettyä ilman lisäkustannusta Googlen omilla connectoreilla. Myös tietokannat, kuten MySQL, saa tuotua samalla tavalla (<a href="https://docs.cloud.google.com/looker/docs/studio/about-connectors-data-sources-and-credentials" target="_blank" rel="noopener">connectorit ja datalähteet</a>).</p>
+
+    <h3>Kolme tapaa tuoda muiden alustojen data</h3>
+    <p>Kolmannen osapuolen lähteet, kuten Meta Ads, LinkedIn Ads, TikTok Ads, CRM tai verkkokauppa-alusta, vaativat usein erillisen connectorin eli liittimen, jolla data siirtyy työkaluun. Osa niistä on maksullisia, ja niiden laatu ja ylläpito vaihtelevat. Tämä on tavallisin yllätyskulu: raportti on ilmainen, mutta kaikkien lähteiden tuominen siihen ei aina ole ilmaista. Tapoja on kolme:</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Tapa</th><th>Sopii, kun</th><th>Päivitys</th><th>Vaiva ja kustannus</th></tr>
+        </thead>
+        <tbody>
+          <tr><td data-label="Tapa"><strong>1. Supermetrics suoraan raporttiin</strong></td><td data-label="Sopii, kun">Alustoja on useita ja halutaan luotettava, nopeasti käyttöön otettava ratkaisu</td><td data-label="Päivitys">Vaihtelee connectorin mukaan</td><td data-label="Vaiva ja kustannus">Pieni vaiva. Supermetricsin lisenssi maksaa</td></tr>
+          <tr><td data-label="Tapa"><strong>2. Google Sheets välissä</strong></td><td data-label="Sopii, kun">Tarvitaan yksinkertainen yhteinen taulukko ja datamäärä on pieni</td><td data-label="Päivitys">Sheets päivittyy raportissa oletuksena 15 minuutin välein, mutta taulukon täyttää se työkalu, joka datan sinne tuo</td><td data-label="Vaiva ja kustannus">Keskitaso. Tarvitaan työkalu, joka kirjoittaa datan taulukkoon</td></tr>
+          <tr><td data-label="Tapa"><strong>3. BigQuery välissä</strong></td><td data-label="Sopii, kun">Alustoja on paljon, dataa on paljon tai historiaa halutaan säilyttää</td><td data-label="Päivitys">BigQuery-lähteelle voi valita 1–50 minuutin tai 1–12 tunnin päivitysvälin, mutta itse siirrot ovat usein päivittäisiä</td><td data-label="Vaiva ja kustannus">Suurin vaiva. BigQueryn käyttö ja siirtotyökalu maksavat</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Ensimmäinen tapa on useimmiten paras valinta, ja siihen suosittelen Supermetricsiä. Omassa kokemuksessani se on johtava palveluntarjoaja tälle tarpeelle ja kattava, hyvin toimiva tapa saada data Data Studioon useasta lähteestä. Supermetrics on lisäksi suomalainen yritys. Sheets ja BigQuery tulevat kyseeseen silloin, kun dataa halutaan tallentaa tai käsitellä ennen raporttia.</p>
+    <p>Google on rakentanut connectorit sekä Googlen omiin että joihinkin muihin tuotteisiin, ja muita alustoja, kuten Facebook Adsia, varten on kolmansien osapuolten rakentamia connectoreita. BigQuery Data Transfer Service tukee lisäksi Google Adsin ja Facebook Adsin siirtoja BigQueryyn, ja molemmat tukevat päivittäisiä siirtoja. Tarkista siirron nykyinen tila ja hinnoittelu ennen käyttöönottoa.</p>
+
+    <h3>Näin yhdistät useamman mainosalustan samaan raporttiin</h3>
+    <ol class="steps">
+      <li><strong>Listaa alustat ja mittarit.</strong> Päätä, mitä alustoja raportissa on ja mitä lukuja niistä tarvitaan. Yleensä riittävät kulut, klikit, näytöt ja konversiot.</li>
+      <li><strong>Tuo data raporttiin.</strong> Kytke Google Ads omalla connectorillaan ja muut alustat valitsemallasi tavalla (connector, Sheets tai BigQuery).</li>
+      <li><strong>Yhdistä datalähteet.</strong> Data Studiossa voi yhdistää eli "blendata" datalähteitä yhteiseen näkymään. Blendiin voi yhdistää enintään viisi datalähdettä ja enintään viisi taulua, ja liitoksissa tuetaan vain yhtäsuuruutta kenttien välillä (<a href="https://docs.cloud.google.com/looker/docs/studio/how-blends-work-in-looker-studio" target="_blank" rel="noopener">blendit</a>). Jos alustoja on enemmän tai dataa on paljon, yhdistä data jo BigQueryssä tai taulukossa.</li>
+      <li><strong>Yhtenäistä kentät.</strong> Tuo jokaiseen datalähteeseen sama "alusta"-kenttä (esim. Google Ads, Meta Ads) ja käytä samaa valuuttaa, aikavyöhykettä ja konversion määritelmää. Muuten luvut eivät ole vertailukelpoisia.</li>
+      <li><strong>Aseta tuoreus ja käyttöoikeudet.</strong> Blendillä ei ole omia tuoreus- tai tunnistetietoasetuksia, vaan ne peritään taustalla olevilta datalähteiltä. Tarkista siis jokaisen datalähteen asetukset erikseen.</li>
+      <li><strong>Ajasta jakelu.</strong> Kun luvut näyttävät oikeilta, ajasta PDF sähköpostiin tai jaa linkki.</li>
+    </ol>
+
+    <h3>Kuinka usein data päivittyy?</h3>
+    <p>Raportti ei päivity itsestään ajastettuna taustalla, vaan se hakee datan, kun sitä katsotaan ja tallennettu (välimuistissa oleva) data on vanhentunut. Data Studio hakee tuoreen datan alkuperäisestä lähteestä, kun tuoreusraja ylittyy (<a href="https://docs.cloud.google.com/looker/docs/studio/manage-data-freshness" target="_blank" rel="noopener">datan tuoreus</a>). Päivitysnopeus riippuu lähteestä:</p>
+    <ul>
+      <li><strong>Google Ads, GA4 ja Search Console:</strong> päivittyvät 12 tunnin välein, eikä väliä voi muuttaa.</li>
+      <li><strong>Google Sheets:</strong> oletuksena 15 minuutin välein, ja välin voi valita 15 minuutista 12 tuntiin.</li>
+      <li><strong>BigQuery:</strong> 1–50 minuuttia tai 1–12 tuntia.</li>
+      <li><strong>Kolmannen osapuolen connectorit:</strong> vaihtelee. Tarkista tarjoajalta, kuinka usein se hakee datan alustalta.</li>
+    </ul>
+    <p>Raportin muokkaaja voi päivittää datan käsin milloin tahansa, ja katselijatkin voivat tehdä sen, jos asetus on sallittu. Päivitysten välillä pitää odottaa vähintään minuutti.</p>
+
+    <h3>Kun data ei päivity tai luvut näyttävät vanhoilta</h3>
+    <ul>
+      <li><strong>Lähde päivittyy harvoin.</strong> Jos Google Ads päivittyy 12 tunnin välein, tuntikohtaista tarkkuutta ei saa raportista. Katso akuutit luvut suoraan Google Adsista.</li>
+      <li><strong>Connector hakee datan omassa aikataulussaan.</strong> Kun Sheets tai BigQuery on välissä, raportti näyttää vain sen, mitä väliin on ehditty tuoda.</li>
+      <li><strong>Käyttöoikeus on katkennut.</strong> Jos datalähde toimii omistajan tunnuksilla, se on riippuvainen tuon henkilön pääsystä tileihin. Tarkista, kenen tunnukset on valittu.</li>
+      <li><strong>Blend on liian raskas.</strong> Suuret liitokset hidastavat raporttia. Rajaa aikaväliä, vähennä kenttiä tai siirrä yhdistäminen BigQueryyn.</li>
+      <li><strong>Alustat mittaavat eri tavoin.</strong> Luvut eivät välttämättä ole vanhoja, vaan alustat laskevat konversiot ja aikaleimat eri tavoin. Katso kohta <a href="#rajoitteet">Sudenkuopat ja rajoitteet</a>.</li>
+    </ul>
 
     <h2 id="ensimmainen-raportti">Näin teet ensimmäisen Data Studio -raportin</h2>
     <p>Seuraava ohje on tarkoituksella yleisluontoinen, koska työkalun käyttöliittymä on uudistunut ja valikkojen nimet muuttuvat. Perusrakenne pysyy samana.</p>
     <ol class="steps">
       <li><strong>Päätä kysymykset.</strong> Kirjoita ylös kolme kysymystä, joihin raportin pitää vastata.</li>
       <li><strong>Luo uusi tyhjä raportti</strong> Google-tililläsi Data Studiossa.</li>
-      <li><strong>Yhdistä datalähde.</strong> Valitse esimerkiksi Google Ads tai GA4 ja anna raportille lupa lukea tiliä.</li>
-      <li><strong>Lisää tiivistelmän luvut.</strong> Lukukortit kuluista, konversioista ja hinnasta per konversio.</li>
-      <li><strong>Lisää aikajakso ja vertailu.</strong> Aikavalinta ja vertailu edelliseen jaksoon kertovat, onko luku hyvä vai huono.</li>
+      <li><strong>Yhdistä datalähde.</strong> Valitse esimerkiksi Google Ads tai GA4 ja anna raportille lupa lukea tiliä. Useamman alustan ohjeet ovat edellisessä osiossa.</li>
+      <li><strong>Lisää tiivistelmä.</strong> Lisää lukukortit kuluista, konversioista ja hinnasta per konversio sekä aikavalinta, jossa on vertailu edelliseen jaksoon. Vertailu kertoo, onko luku hyvä vai huono.</li>
       <li><strong>Lisää kampanjataulukko ja trendikaavio.</strong> Nämä näyttävät, mikä liikuttaa lukuja.</li>
       <li><strong>Jaa raportti.</strong> Jaa linkillä ja säädä oikeudet. Ajasta tarvittaessa PDF sähköpostiin.</li>
     </ol>
-    <!-- KUVA 1: raportin tiivistelmäsivu (oma kuvakaappaus uudesta käyttöliittymästä). Alt: "Data Studio -raportin tiivistelmäsivu, jossa kulut, konversiot ja hinta per konversio" -->
-    <!-- KUVA 2: datalähteen kytkentä. Alt: "Datalähteen yhdistäminen Data Studio -raporttiin" -->
-    <!-- KUVA 3: jakoasetukset. Alt: "Data Studio -raportin jakoasetukset ja käyttöoikeudet" -->
-    <!-- KUVA 4: ajastettu PDF. Alt: "Data Studio -raportin ajastettu PDF-lähetys sähköpostiin" -->
 
-    <h2 id="virheet">Yleisimmät virheet Data Studio -raporteissa</h2>
-    <p>Useimmat raportit epäonnistuvat samoista syistä. Nämä virheet toistuvat usein:</p>
+    <h2 id="rajoitteet">Sudenkuopat ja rajoitteet</h2>
+    <p>Data Studio ei ole täydellinen, ja rajoitteet on parempi tietää etukäteen.</p>
+
+    <h3>Rajoitteet</h3>
+    <ul>
+      <li><strong>Muokkaus ja kopiointi voivat olla työlästä.</strong> Suuren raportin muokkaaminen tai kopioiminen uudelle asiakkaalle vie yllättävän paljon aikaa.</li>
+      <li><strong>Maksulliset connectorit.</strong> Kaikki lähteet eivät ole ilmaisia, kuten yllä kävi ilmi.</li>
+      <li><strong>Hidas raportti.</strong> Latautumista hidastavat raskaat datalähteet ja kyselyt sekä liian monta kaaviota samalla sivulla. Datalähteiden kiintiörajoitukset voivat lisäksi estää datan haun.</li>
+    </ul>
+
+    <h3>Yleisimmät virheet</h3>
     <ul>
       <li><strong>Liikaa kaavioita.</strong> Kun sivulla on kaksitoista kaaviota, lukija ei tiedä mihin katsoa. Yksi sivu, yksi kysymys.</li>
-      <li><strong>Mittarit ilman selitystä.</strong> Jos "konversio" tarkoittaa eri asiaa Adsissa ja GA4:ssä, raportti aiheuttaa enemmän keskustelua kuin päätöksiä.</li>
       <li><strong>Ei vertailua.</strong> Luku ilman vertailua edelliseen jaksoon ei kerro, onko se hyvä vai huono.</li>
       <li><strong>Raportti ilman omistajaa.</strong> Kun kukaan ei vastaa raportista, datalähteet katkeavat ja luvut alkavat vanheta huomaamatta.</li>
       <li><strong>Käyttöoikeudet jäävät miettimättä.</strong> Datalähteen tunnistetiedoissa valitaan, käyttääkö raportti omistajan vai katselijan oikeuksia. Valinta kannattaa tehdä tietoisesti ennen kuin raportti jaetaan.</li>
       <li><strong>Raporttia ei päivitetä.</strong> Yritys, kampanjat ja tavoitteet muuttuvat. Raportti, jota ei tarkisteta puolen vuoden välein, alkaa mitata vanhoja asioita.</li>
     </ul>
 
-    <h2 id="rajoitteet">Data Studion rajoitteet ja sudenkuopat</h2>
-    <p>Data Studio ei ole täydellinen, ja rajoitteet on parempi tietää etukäteen.</p>
-    <ul>
-      <li><strong>Muokkaus ja kopiointi voivat olla työlästä.</strong> Suuren raportin muokkaaminen tai kopioiminen uudelle asiakkaalle vie yllättävän paljon aikaa.</li>
-      <li><strong>Maksulliset connectorit.</strong> Kaikki lähteet eivät ole ilmaisia, kuten yllä kävi ilmi.</li>
-      <li><strong>Hidas raportti.</strong> Raskaat datalähteet ja kyselyt hidastavat latautumista.</li>
-      <li><strong>Google Adsin ja GA4:n luvut eivät aina täsmää.</strong> Työkalut mittaavat eri asioita: Ads laskee klikkauksia ja GA4 käyntejä, ja attribuutiomallit sekä konversioiden ajoitus voivat erota. Raportin tekijän pitää osata selittää, miksi luvut eroavat, muuten johto alkaa epäillä koko raporttia.</li>
-    </ul>
-
     <h3>Miksi Google Adsin ja GA4:n luvut eroavat</h3>
-    <p>Tämä on ylivoimaisesti yleisin kysymys, kun Ads ja GA4 tuodaan samaan raporttiin. Syyt ovat yleensä nämä:</p>
+    <p>Tämä on ylivoimaisesti yleisin kysymys, kun Ads ja GA4 tuodaan samaan raporttiin. Raportin tekijän pitää osata selittää ero, sillä muuten johto alkaa epäillä koko raporttia. Syyt ovat yleensä nämä:</p>
     <ul>
       <li><strong>Mitä lasketaan.</strong> Google Ads laskee mainosten klikkauksia, GA4 laskee käyntejä ja tapahtumia sivustolla. Yksi klikkaus ei aina tuota yhtä käyntiä.</li>
       <li><strong>Attribuutio.</strong> Työkalut voivat kohdistaa konversion eri kanavalle. Sama ostos voi näkyä Adsissa mainoksen ansiona ja GA4:ssä toisen kanavan ansiona.</li>
@@ -464,24 +514,28 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h2 id="ukk">Usein kysytyt kysymykset</h2>
     <div class="faq">
       <details>
-        <summary>Onko Data Studio ilmainen?</summary>
-        <p>Perustyökalu on ilmainen. Maksullinen Data Studio Pro on tarkoitettu tiimeille ja organisaatioille. Lisäksi osa kolmannen osapuolen connectoreista voi olla maksullisia.</p>
+        <summary>Onko Data Studio ilmainen ja mitä Data Studio Pro tuo lisää?</summary>
+        <p>Perustyökalu on ilmainen, ja se riittää valtaosalle yrityksistä. Data Studio Pro on maksullinen versio tiimeille ja organisaatioille: siinä on enemmän hallintaa, tekoälyominaisuuksia ja Google Cloud -integraatio. Lisäksi osa kolmannen osapuolen connectoreista on maksullisia. Tarkista Pron ajantasaiset ominaisuudet ja hinnat Googlelta.</p>
       </details>
       <details>
         <summary>Onko Data Studio sama kuin Looker Studio?</summary>
-        <p>Kyllä. Google nimesi Looker Studion takaisin Data Studioksi huhtikuussa 2026. Tuote on sama, ja olemassa olevat raportit siirtyvät Googlen mukaan uuteen kokemukseen automaattisesti. Looker on eri tuote: se on Googlen yritystason raportointi- ja analytiikka-alusta (BI).</p>
+        <p>Kyllä. Google nimesi Looker Studion takaisin Data Studioksi huhtikuussa 2026. Tuote on sama, ja olemassa olevat raportit siirtyvät uuteen kokemukseen automaattisesti. Looker on eri tuote: se on Googlen yritystason raportointi- ja analytiikka-alusta (BI).</p>
       </details>
       <details>
-        <summary>Mitä eroa on Data Studiolla ja Data Studio Prolla?</summary>
-        <p>Data Studio on ilmainen työkalu yksittäiseen analyysiin ja raporttien jakamiseen. Data Studio Pro on maksullinen versio tiimeille: siinä on enemmän hallintaa, tekoälyominaisuuksia ja Google Cloud -integraatio. Tarkista ajantasaiset ominaisuudet ja hinnat Googlelta.</p>
+        <summary>Miten Data Studio päivittyy automaattisesti useasta mainosalustasta?</summary>
+        <p>Kytke jokainen mainosalusta raporttiin datalähteenä ja yhdistä ne samaan raporttiin. Google Ads onnistuu Googlen omalla connectorilla. Meta Ads, LinkedIn Ads ja TikTok Ads tarvitsevat yleensä kolmannen osapuolen connectorin, joka tuo datan suoraan raporttiin, Google Sheetsin tai BigQueryn kautta. Raportti hakee tuoreen datan itse, kun sitä katsotaan ja tuoreusraja on ylittynyt.</p>
       </details>
       <details>
-        <summary>Voiko Google Adsin ja GA4:n datan yhdistää samaan raporttiin?</summary>
-        <p>Kyllä. Molemmat ovat Googlen omia datalähteitä, ja ne voi tuoda samaan raporttiin. Luvut voivat silti erota, koska työkalut mittaavat eri tavoin.</p>
+        <summary>Tarvitseeko Meta Adsin datan tuominen maksullisen connectorin?</summary>
+        <p>Yleensä kyllä. Google tarjoaa omat connectorit Googlen tuotteisiin, ja esimerkiksi Facebook Adsia varten käytetään kolmansien osapuolten connectoreita, kuten Supermetricsiä. Ne ovat maksullisia. Vaihtoehtona on siirtää data BigQueryyn tai Sheetsiin, mutta silloinkin tarvitaan siirtotyökalu.</p>
+      </details>
+      <details>
+        <summary>Montako datalähdettä Data Studio -raporttiin voi yhdistää?</summary>
+        <p>Raportissa voi olla useita datalähteitä, mutta yhteen blendiin eli yhdistettyyn näkymään voi yhdistää enintään viisi datalähdettä ja enintään viisi taulua. Jos alustoja on enemmän, yhdistä data BigQueryssä tai taulukossa ennen raporttia.</p>
       </details>
       <details>
         <summary>Päivittyykö Data Studio -raportti reaaliajassa?</summary>
-        <p>Ei. Googlen ohjekeskuksen mukaan Google Ads ja Search Console päivittyvät 12 tunnin välein, eikä sitä voi muuttaa. Raportin muokkaaja voi päivittää datan käsin. Tuoreet päätöstason luvut kannattaa katsoa suoraan Google Adsista.</p>
+        <p>Ei. Google Ads ja Search Console päivittyvät 12 tunnin välein, eikä väliä voi muuttaa. Raportin muokkaaja voi päivittää datan käsin. Tuoreet päätöstason luvut kannattaa katsoa suoraan Google Adsista.</p>
       </details>
       <details>
         <summary>Voiko Data Studio -raportin ajastaa sähköpostiin?</summary>
@@ -490,10 +544,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <details>
         <summary>Kuinka nopeasti Data Studio -raportti valmistuu?</summary>
         <p>Yksinkertaisen yhden lähteen raportin saa pystyyn tunnissa tai parissa. Useamman lähteen raportti, jossa mittarit on määritelty kunnolla, vie selvästi pidempään. Suurin osa ajasta kuluu suunnitteluun, ei klikkailuun.</p>
-      </details>
-      <details>
-        <summary>Milloin kannattaa käyttää raportin tekijää?</summary>
-        <p>Kun lähteitä on useita, raportti menee johdolle tai asiakkaille tai Adsin ja GA4:n luvut eivät täsmää. Silloin tekijän työ tuo mukanaan luvut, joihin voi luottaa.</p>
       </details>
       <details>
         <summary>Paljonko Data Studio -raportin teettäminen maksaa?</summary>
