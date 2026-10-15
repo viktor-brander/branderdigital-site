@@ -584,6 +584,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     /* PAGE VISIBILITY */
     .page { display: none; }
     .page.active { display: block; }
+
+    /* ===== Parannukset 10/2026 (yhteiset navigaatio- ja footer-korjaukset) ===== */
+    @media (max-width: 639px) {
+      .footer-bottom-inner { flex-direction: column; align-items: flex-start; gap: 0.25rem; }
+    }
+    .footer-links { gap: 0; }
+    .footer-links a { display: flex; align-items: center; min-height: 44px; }
+    .footer-contact-email { min-height: 44px; }
+    @media (min-width: 768px) and (max-width: 1023px) {
+      .nav-links { gap: 1.1rem; }
+    }
   </style>
 </head>
 <body>
@@ -599,9 +610,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <span class="nav-logo-text">Brander <span>Digital</span></span>
     </a>
     <div class="nav-links" id="nav-menu">
+      <a href="/#palvelu">Palvelut</a>
       <a href="/#paketit">Paketit</a>
-      <a href="/#minusta">Minusta</a>
       <a href="/#lupaukset">Lupaukset</a>
+      <a href="/#minusta">Minusta</a>
       <a href="/#prosessi">Prosessi</a>
       <a href="/#ukk">UKK</a>
       <a href="/yhteydenotto" class="nav-links-cta" onclick="if(window.dataLayer){window.dataLayer.push({event:'cta_click',cta_location:'nav_menu'});}">Tilaa maksuton auditointi</a>
@@ -634,7 +646,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div>
         <div class="footer-nav-title">Navigaatio</div>
         <div class="footer-links">
+          <a href="/#palvelu">Palvelut</a>
           <a href="/#paketit">Paketit</a>
+          <a href="/#lupaukset">Lupaukset</a>
           <a href="/#minusta">Minusta</a>
           <a href="/#prosessi">Prosessi</a>
           <a href="/#ukk">UKK</a>
