@@ -20,6 +20,34 @@
       gtag('set', 'url_passthrough', false);
     </script>
     <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="4be097cc-0cf1-40d7-8d7c-0917ea317709" data-blockingmode="manual" data-consentmode-defaults="disabled" async></script>
+    <link rel="preconnect" href="https://consentcdn.cookiebot.com" />
+    <style>
+    /* Cookiebot: kompakti alapalkki mobiilissa (pienentää bannerin LCP-pinta-alaa) */
+    @media (max-width: 639px) {
+      #CybotCookiebotDialog {
+        top: auto !important; bottom: 0 !important; left: 0 !important; right: 0 !important;
+        transform: none !important;
+        width: 100% !important; max-width: 100% !important;
+        height: auto !important; max-height: 70vh !important;
+        border-radius: 12px 12px 0 0 !important;
+      }
+      #CybotCookiebotDialogHeader,
+      #CybotCookiebotDialogBodyLevelWrapper,
+      #CybotCookiebotDialogBodyLevelButtonLevelOptinAllowallSelection { display: none !important; }
+      #CybotCookiebotDialogNav a { padding: 8px 0 !important; font-size: 13px !important; }
+      #CybotCookiebotDialogTabContent { padding: 12px 16px 4px !important; }
+      #CybotCookiebotDialogBodyContentTitle { font-size: 14px !important; margin-bottom: 4px !important; }
+      #CybotCookiebotDialogBodyContentText {
+        font-size: 13px !important; line-height: 1.45 !important;
+        max-height: 5.8em !important; overflow-y: auto !important;
+      }
+      #CybotCookiebotDialogFooter { padding: 8px 16px 12px !important; }
+      #CybotCookiebotDialogBodyButtonsWrapper { flex-direction: row !important; gap: 8px !important; }
+      #CybotCookiebotDialogBodyButtonsWrapper .CybotCookiebotDialogBodyButton {
+        flex: 1 1 0 !important; width: auto !important; padding: 12px 8px !important; font-size: 14px !important;
+      }
+    }
+    </style>
     <!-- End Cookiebot -->
     <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
