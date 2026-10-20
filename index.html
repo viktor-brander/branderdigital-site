@@ -66,12 +66,61 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:image" content="https://branderdigital.fi/og-image.png" />
   <link rel="canonical" href="https://branderdigital.fi/" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Figtree:wght@400;500;600;700&display=swap" />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
-  <noscript><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet" /></noscript>
   <style>
+    /* Omalta palvelimelta: Outfit ja Figtree (variable, latin) */
+    @font-face {
+      font-family: 'Outfit'; font-style: normal; font-weight: 400 800; font-display: swap;
+      src: url('/fonts/outfit-latin-wght-v1.woff2') format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+    @font-face {
+      font-family: 'Figtree'; font-style: normal; font-weight: 400 700; font-display: swap;
+      src: url('/fonts/figtree-latin-wght-v1.woff2') format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+    /* Fallback-fontit mitoitettu vastaamaan Outfitia ja Figtreetä, ettei fonttivaihto siirrä asettelua */
+    @font-face {
+      font-family: 'Outfit Fallback'; font-weight: 400 600;
+      src: local('Arial'), local('ArialMT'), local('Liberation Sans');
+      size-adjust: 100.47%; ascent-override: 99.53%; descent-override: 25.88%; line-gap-override: 0%;
+    }
+    @font-face {
+      font-family: 'Outfit Fallback'; font-weight: 700 900;
+      src: local('Arial Bold'), local('Arial-BoldMT'), local('Liberation Sans Bold');
+      size-adjust: 98.35%; ascent-override: 101.68%; descent-override: 26.44%; line-gap-override: 0%;
+    }
+    @font-face {
+      font-family: 'Outfit Fallback Android'; font-weight: 400 600;
+      src: local('Roboto'), local('Roboto-Regular');
+      size-adjust: 100.3%; ascent-override: 99.7%; descent-override: 25.92%; line-gap-override: 0%;
+    }
+    @font-face {
+      font-family: 'Outfit Fallback Android'; font-weight: 700 900;
+      src: local('Roboto Bold'), local('Roboto-Bold');
+      size-adjust: 104.04%; ascent-override: 96.11%; descent-override: 24.99%; line-gap-override: 0%;
+    }
+    @font-face {
+      font-family: 'Figtree Fallback'; font-weight: 400 500;
+      src: local('Arial'), local('ArialMT'), local('Liberation Sans');
+      size-adjust: 101%; ascent-override: 94.87%; descent-override: 25.1%; line-gap-override: 0%;
+    }
+    @font-face {
+      font-family: 'Figtree Fallback'; font-weight: 600 900;
+      src: local('Arial Bold'), local('Arial-BoldMT'), local('Liberation Sans Bold');
+      size-adjust: 96.21%; ascent-override: 98.75%; descent-override: 25.99%; line-gap-override: 0%;
+    }
+    @font-face {
+      font-family: 'Figtree Fallback Android'; font-weight: 400 500;
+      src: local('Roboto'), local('Roboto-Regular');
+      size-adjust: 99.97%; ascent-override: 95.03%; descent-override: 25.1%; line-gap-override: 0%;
+    }
+    @font-face {
+      font-family: 'Figtree Fallback Android'; font-weight: 600 900;
+      src: local('Roboto Bold'), local('Roboto-Bold');
+      size-adjust: 101.77%; ascent-override: 93.34%; descent-override: 24.56%; line-gap-override: 0%;
+    }
+
+
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
@@ -100,13 +149,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     body {
       background: var(--background);
       color: var(--foreground);
-      font-family: 'Figtree', ui-sans-serif, system-ui, sans-serif;
+      font-family: 'Figtree', 'Figtree Fallback', 'Figtree Fallback Android', ui-sans-serif, system-ui, sans-serif;
       -webkit-font-smoothing: antialiased;
       line-height: 1.6;
     }
 
     h1,h2,h3,h4 {
-      font-family: 'Outfit', ui-sans-serif, system-ui, sans-serif;
+      font-family: 'Outfit', 'Outfit Fallback', 'Outfit Fallback Android', ui-sans-serif, system-ui, sans-serif;
       letter-spacing: -0.02em;
     }
 
@@ -137,7 +186,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       border-radius: 0.5rem; background: var(--gradient);
       box-shadow: var(--shadow-elegant);
     }
-    .nav-logo-text { font-family: 'Outfit', sans-serif; font-size: 1.125rem; font-weight: 600; }
+    .nav-logo-text { font-family: 'Outfit', 'Outfit Fallback', 'Outfit Fallback Android', sans-serif; font-size: 1.125rem; font-weight: 600; }
     .nav-logo-text span { color: var(--muted-fg); font-weight: 500; }
     .nav-links { display: flex; align-items: center; gap: 1.75rem; }
     .nav-links a { color: var(--muted-fg); text-decoration: none; font-size: 0.875rem; font-weight: 500; transition: color .15s; }
@@ -292,7 +341,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
     @media(min-width:640px) { .stats-inner { grid-template-columns: repeat(4, 1fr); padding: 3.5rem 1.5rem; } }
     .stat { text-align: center; }
-    .stat-value { font-family: 'Outfit', sans-serif; font-size: 2rem; font-weight: 800; }
+    .stat-value { font-family: 'Outfit', 'Outfit Fallback', 'Outfit Fallback Android', sans-serif; font-size: 2rem; font-weight: 800; }
     @media(min-width:640px) { .stat-value { font-size: 2.5rem; } }
     .stat-label { margin-top: 0.375rem; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted-fg); }
     @media(min-width:640px) { .stat-label { font-size: 0.875rem; text-transform: none; letter-spacing: normal; } }
@@ -365,15 +414,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .pkg-tier {
       width: 2.75rem; height: 2.75rem; border-radius: 0.625rem;
       background: var(--gradient); display: flex; align-items: center; justify-content: center;
-      font-family: 'Outfit', sans-serif; font-size: 1.125rem; font-weight: 800;
+      font-family: 'Outfit', 'Outfit Fallback', 'Outfit Fallback Android', sans-serif; font-size: 1.125rem; font-weight: 800;
       color: #fff; box-shadow: var(--shadow-elegant);
     }
     .pkg-header { display: flex; align-items: center; gap: 0.75rem; }
-    .pkg-name { font-family: 'Outfit', sans-serif; font-size: 1.125rem; font-weight: 700; line-height: 1; }
+    .pkg-name { font-family: 'Outfit', 'Outfit Fallback', 'Outfit Fallback Android', sans-serif; font-size: 1.125rem; font-weight: 700; line-height: 1; }
     .pkg-budget { margin-top: 0.25rem; font-size: 0.75rem; color: var(--muted-fg); }
     .pkg-blurb { margin-top: 1rem; font-size: 0.875rem; line-height: 1.6; color: var(--muted-fg); }
     .pkg-price-block { margin-top: 1.25rem; padding-top: 1.25rem; border-top: 1px solid var(--border); }
-    .pkg-price { font-family: 'Outfit', sans-serif; font-size: 1.875rem; font-weight: 800; }
+    .pkg-price { font-family: 'Outfit', 'Outfit Fallback', 'Outfit Fallback Android', sans-serif; font-size: 1.875rem; font-weight: 800; }
     .pkg-price-note { margin-top: 0.25rem; font-size: 0.75rem; color: var(--muted-fg); }
     .pkg-features { margin-top: 1.25rem; flex: 1; display: flex; flex-direction: column; gap: 0.625rem; font-size: 0.875rem; }
     .pkg-feature { display: flex; align-items: flex-start; gap: 0.625rem; }
@@ -415,7 +464,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
     .partner-card { margin-top: 1.25rem; }
     .cert-header { display: flex; align-items: center; gap: 0.75rem; }
-    .cert-title { font-family: 'Outfit', sans-serif; font-size: 1.125rem; font-weight: 700; }
+    .cert-title { font-family: 'Outfit', 'Outfit Fallback', 'Outfit Fallback Android', sans-serif; font-size: 1.125rem; font-weight: 700; }
     .cert-list { margin-top: 1.25rem; display: flex; flex-direction: column; gap: 0; }
     .cert-item {
       display: flex; align-items: center; justify-content: space-between;
@@ -423,7 +472,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
     .cert-item:last-child { border-bottom: none; }
     .cert-status { font-size: 0.75rem; font-weight: 600; color: var(--primary); }
-    .partner-title { font-family: 'Outfit', sans-serif; font-size: 1.125rem; font-weight: 700; }
+    .partner-title { font-family: 'Outfit', 'Outfit Fallback', 'Outfit Fallback Android', sans-serif; font-size: 1.125rem; font-weight: 700; }
     .partner-body { margin-top: 0.5rem; font-size: 0.875rem; line-height: 1.7; color: var(--muted-fg); }
 
     /* PROCESS */
@@ -431,7 +480,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       border: 1px solid var(--border); background: var(--card);
       border-radius: calc(var(--radius) + 0.5rem); padding: 1.75rem;
     }
-    .step-num { font-family: 'Outfit', sans-serif; font-size: 3rem; font-weight: 800; line-height: 1; }
+    .step-num { font-family: 'Outfit', 'Outfit Fallback', 'Outfit Fallback Android', sans-serif; font-size: 3rem; font-weight: 800; line-height: 1; }
     .step-card h3 { margin-top: 1.25rem; font-size: 1.25rem; font-weight: 700; }
     .step-card p { margin-top: 0.5rem; line-height: 1.7; color: var(--muted-fg); }
 
@@ -440,7 +489,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .faq-item { border-bottom: 1px solid var(--border); }
     .faq-q {
       width: 100%; background: none; border: none; text-align: left;
-      padding: 1.25rem 0; font-family: 'Outfit', sans-serif; font-size: 1rem; font-weight: 700;
+      padding: 1.25rem 0; font-family: 'Outfit', 'Outfit Fallback', 'Outfit Fallback Android', sans-serif; font-size: 1rem; font-weight: 700;
       cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1rem;
       color: var(--foreground);
     }
@@ -510,7 +559,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
     .form-group input:focus, .form-group textarea:focus { border-color: var(--primary); }
     .form-group textarea { resize: vertical; min-height: 7rem; }
-    .form-submit { width: 100%; margin-top: 0.5rem; padding: 0.875rem; font-size: 1rem; font-family: 'Figtree', sans-serif; justify-content: center; }
+    .form-submit { width: 100%; margin-top: 0.5rem; padding: 0.875rem; font-size: 1rem; font-family: 'Figtree', 'Figtree Fallback', 'Figtree Fallback Android', sans-serif; justify-content: center; }
     .form-note { margin-top: 0.75rem; text-align: center; font-size: 0.75rem; color: var(--muted-fg); }
     .form-success { padding: 3rem 1rem; text-align: center; }
     .success-icon {
@@ -536,7 +585,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     @media(min-width:768px) { .footer-inner { grid-template-columns: repeat(3, 1fr); } }
     .footer-logo { display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.75rem; }
     .footer-tagline { font-size: 0.875rem; line-height: 1.6; color: var(--muted-fg); max-width: 18rem; }
-    .footer-nav-title, .footer-contact-title { font-family: 'Outfit', sans-serif; font-size: 0.875rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .footer-nav-title, .footer-contact-title { font-family: 'Outfit', 'Outfit Fallback', 'Outfit Fallback Android', sans-serif; font-size: 0.875rem; font-weight: 700; margin-bottom: 0.5rem; }
     .footer-links { display: flex; flex-direction: column; gap: 0.5rem; }
     .footer-links a { font-size: 0.875rem; color: var(--muted-fg); text-decoration: none; transition: color .15s; }
     .footer-links a:hover { color: var(--foreground); }
@@ -663,12 +712,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .li-card:hover { box-shadow: var(--shadow-soft); transform: translateY(-2px); }
     .li-card-head { display: flex; align-items: center; gap: 0.75rem; }
     .li-card-head img { width: 2.75rem; height: 2.75rem; border-radius: 9999px; object-fit: cover; object-position: center 15%; }
-    .li-card-name { font-family: 'Outfit', sans-serif; font-weight: 700; line-height: 1.2; }
+    .li-card-name { font-family: 'Outfit', 'Outfit Fallback', 'Outfit Fallback Android', sans-serif; font-weight: 700; line-height: 1.2; }
     .li-card-role { font-size: 0.8125rem; color: var(--muted-fg); }
     .li-card-logo {
       margin-left: auto; display: inline-flex; align-items: center; justify-content: center;
       width: 1.5rem; height: 1.5rem; border-radius: 0.3rem; background: #0a66c2;
-      color: #fff; font-weight: 800; font-size: 0.8125rem; font-family: 'Figtree', sans-serif;
+      color: #fff; font-weight: 800; font-size: 0.8125rem; font-family: 'Figtree', 'Figtree Fallback', 'Figtree Fallback Android', sans-serif;
     }
     .li-card-text { line-height: 1.7; color: var(--foreground); }
     .li-card-more { margin-top: auto; font-size: 0.9375rem; font-weight: 600; color: var(--primary); }
@@ -854,9 +903,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="hero-text">
         <span class="hero-badge">
           <span class="hero-badge-dot"></span>
-          Sertifioitu Google Ads -asiantuntija · Suomi
+          Google Ads -konsultointi yrityksille · Suomi
         </span>
-        <h1>Google-mainonta ei aina epäonnistu näkyvästi. <span class="text-gradient">Se vuotaa rahaa hiljaa.</span></h1>
+        <h1>Google Ads -mainonta ei aina epäonnistu näkyvästi. <span class="text-gradient">Se vuotaa rahaa hiljaa.</span></h1>
         <p>Autan yrityksiä löytämään kampanjoiden, seurannan ja datan piilossa olevat ongelmat ennen kuin ne syövät markkinointibudjetin tuoton.</p>
        <p>Yli 10 vuoden kokemus, Google Premier Partner -tausta ja yhteistyötä Suomen tunnetuimpien yritysten kanssa. Strategia, toteutus ja optimointi samalta asiantuntijalta.</p>
 
@@ -923,7 +972,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="card"><div class="service-dot"></div><h3>Shopping & Merchant</h3><p>Verkkokauppasi tuotteet visuaalisesti esiin suoraan Google-hakutuloksiin.</p></div>
         <div class="card"><div class="service-dot"></div><h3>Demand Gen & YouTube</h3><p>Luodaan uutta kysyntää visuaalisesti kuvin ja videoin.</p></div>
         <div class="card"><div class="service-dot"></div><h3>Konversioseuranta</h3><p>Luotettavan mittauskokonaisuuden rakentaminen (GTM, GA4 & Server-side).</p></div>
-        <div class="card"><div class="service-dot"></div><h3>Raportointi</h3><p>Päivittyvä raportointinäkymä euroista ja tuloksista, ei turhista metriikoista.</p></div>
+        <div class="card"><div class="service-dot"></div><h3>Raportointi</h3><p>Raportointi euroista ja tuloksista, ei turhista metriikoista. Kuukausiraportti Hallinta-paketista alkaen ja päivittyvä Data Studio -näkymä Kumppani-paketissa tai lisäpalveluna.</p></div>
       </div>
     </div>
   </section>
@@ -933,7 +982,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="container">
       <span class="section-tag">Paketit</span>
       <h2 class="section-title">Valitse tilanteesi mukainen <span class="text-gradient">paketti.</span></h2>
-      <p class="section-lead">Kaikki paketit alkavat maksuttomalla auditoinnilla. Kuukausittaiset sopimukset, yhden kuukauden irtisanomisaika. Hinnat alv. 0 %.</p>
+      <p class="section-lead">Kaikki paketit alkavat maksuttomalla auditoinnilla. Hallinta- ja Kumppani-paketin lopullinen hinta tarkentuu auditoinnissa. Kuukausittaiset sopimukset, yhden kuukauden irtisanomisaika. Hinnat alv. 0 %.</p>
 
       <div class="grid-3" style="margin-top:3rem">
         <!-- S -->
@@ -954,12 +1003,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <li class="pkg-feature"><span class="pkg-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span><span>30 min sparraus / kk + sähköpostikysymykset</span></li>
             <li class="pkg-feature"><span class="pkg-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span><span>1 kk irtisanomisaika</span></li>
           </ul>
-          <div class="pkg-cta pkg-cta-outline"><a href="/yhteydenotto" onclick="if(window.dataLayer){window.dataLayer.push({event:'cta_click',cta_location:'paketti_s'});}">Tilaa maksuton auditointi</a></div>
+          <div class="pkg-cta pkg-cta-outline"><a href="/yhteydenotto" onclick="if(window.dataLayer){window.dataLayer.push({event:'cta_click',cta_location:'paketti_s'});}">Pyydä aloituskeskustelu</a></div>
         </div>
 
         <!-- M -->
         <div class="pkg-card popular">
-          <span class="pkg-badge">Suosituin</span>
+          <span class="pkg-badge">Useimmille sopiva</span>
           <div class="pkg-header">
             <div class="pkg-tier">M</div>
             <div><div class="pkg-name">Hallinta</div><div class="pkg-budget">Mainosbudjetti 1 000–3 000 €/kk</div></div>
@@ -1022,7 +1071,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <section id="kenelle" class="section">
     <div class="container">
       <span class="section-tag">Kenelle sopii</span>
-      <h2 class="section-title">Erilaiset toimialat, <span class="text-gradient">sama tekemisen laatu.</span></h2>
+      <h2 class="section-title">Kolme liiketoimintamallia, <span class="text-gradient">ratkaisu jokaiselle.</span></h2>
       <p class="section-lead">Sama strategia ei toimi kaikille. Räätälöin Google Ads -mainonnan aina sen mukaan, miten yrityksesi tekee tulosta ja mistä tärkeimmät asiakkaasi tulevat.</p>
       <div class="grid-3" style="margin-top:3rem">
         <div class="card">
@@ -1062,8 +1111,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
         <div class="card">
           <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
-          <h3>Kiinteä ja läpinäkyvä hinnoittelu</h3>
-          <p>Ei piilokuluja tai yllättäviä lisälaskuja. Hinnoitteluni on täysin läpinäkyvää ja ennustettavaa.</p>
+          <h3>Läpinäkyvä hinnoittelu</h3>
+          <p>Ei piilokuluja tai yllättäviä lisälaskuja. Kuukausihinta sovitaan auditoinnin jälkeen, ja se pysyy samana, kunnes sovimme muutoksesta.</p>
         </div>
         <div class="card">
           <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 12V22H4V12"/><path d="M22 7H2v5h20V7z"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 010-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 000-5C13 2 12 7 12 7z"/></svg></div>
@@ -1088,7 +1137,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <h2 class="section-title">10 vuotta tuloksellista <span class="text-gradient">hakukone- ja digimarkkinointia.</span></h2>
           <div class="about-text-body">
             <p>Olen työskennellyt hakukone- ja digimarkkinoinnin parissa 10 vuotta — mukaan lukien toimistossa, joka palkittiin aikanani kolmesti Vuoden digitoimistona.</p>
-            <p>Vastuullani on ollut myös virallisen Google Premier Partner -statuksen hankinta ja ylläpito. Tämä sertifiointi myönnetään vain parhaiten suoriutuville kumppaneille, ja se on suora osoitus kyvystä hallita suuria budjetteja, täyttää Googlen tiukimmat vaatimukset sekä tehdä todistettavaa tulosta.</p>
+            <p>Vastuullani on ollut myös virallisen Google Premier Partner -statuksen hankinta ja ylläpito, mikä vaatii suurten budjettien hallintaa, Googlen tiukimpien vaatimusten täyttämistä ja todistettavaa tulosta.</p>
             <p class="highlight">Nyt tarjoan tämän saman senior-tason osaamisen suoraan yrityksellesi — ilman välikäsiä.</p>
             <p><a href="https://www.linkedin.com/in/viktorbrander/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:0.4rem;color:var(--primary);font-weight:600;text-decoration:none" onclick="if(window.dataLayer){window.dataLayer.push({event:'linkedin_click',link_location:'about'});}"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>Seuraa LinkedInissä ↗</a></p>
           </div>
@@ -1109,8 +1158,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </ul>
           </details>
           <div class="partner-card">
-            <div class="partner-title">Google Premier Partner</div>
-            <p class="partner-body">Tämä korkein sertifiointi myönnetään vuosittain vain parhaiten suoriutuvalle 3 prosentille Googlen kumppaneista. Status on suora osoitus kyvystä tehdä todistettavaa tulosta, hallita suuria mediabudjetteja tehokkaasti sekä pitää asiantuntijuus jatkuvasti ajan tasalla.</p>
+            <div class="partner-title">Kokemus Premier Partner -tasolta</div>
+            <p class="partner-body">Status on yritystason taso, jonka Google myöntää vuosittain kunkin maan parhaalle 3 prosentille Partner-ohjelman yrityksistä.</p>
           </div>
         </div>
       </div>
@@ -1153,7 +1202,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="grid-3" style="margin-top:3rem">
         <div class="step-card"><div class="step-num text-gradient">01</div><h3>Maksuton auditointi ja esikeskustelu</h3><p>Täytä lomake tai laita sähköpostia. Sovitaan lyhyt esikeskustelu, jossa kuulen liiketoiminnastasi ja tavoitteistasi. Käyn tilisi läpi ja näytän konkreettisesti, missä on korjattavaa tai kehitettävää.</p></div>
         <div class="step-card"><div class="step-num text-gradient">02</div><h3>Aloituspalaveri ja strategia</h3><p>Valitaan palvelupaketti, käydään läpi tavoitteet ja budjetti. Sovitaan palaveriaikataulu ja yhteistyön rytmi.</p></div>
-        <div class="step-card"><div class="step-num text-gradient">03</div><h3>Mainonnan käynnistys ja jatkuva kehitys</h3><p>Otan tilisi haltuun tai rakennan uuden kampanjarakenteen nollasta. Mikäli aloitan muussa kuin ohjaavassa roolissa, vastaan tästä eteenpäin mainonnan päivittäisestä optimoinnista, seurannasta ja strategisesta kehityksestä sovitun rytmin mukaisesti.</p></div>
+        <div class="step-card"><div class="step-num text-gradient">03</div><h3>Mainonnan käynnistys ja jatkuva kehitys</h3><p>Otan tilisi haltuun tai rakennan uuden kampanjarakenteen nollasta. Hallinta- ja Kumppani-paketeissa vastaan tästä eteenpäin mainonnan päivittäisestä optimoinnista, seurannasta ja kehityksestä sovitussa rytmissä. Ohjaus-paketissa sinä hoidat arjen ja minä varmistan suunnan sparrauksissa.</p></div>
       </div>
     </div>
   </section>
