@@ -53,8 +53,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   }
   </style>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Tilaa maksuton auditointi — Brander Digital</title>
-  <meta name="description" content="Tilaa maksuton Google Ads -auditointi. Käyn mainostilisi läpi ja kerron missä rahaa palaa ja missä on suurin potentiaali." />
+  <title>Ota yhteyttä — Brander Digital</title>
+  <meta name="description" content="Ota yhteyttä Google Ads -mainonnasta. Jos sinulla on jo mainostili, käyn sen läpi maksutta ja näytän, missä rahaa palaa ja missä on suurin potentiaali." />
   <meta name="author" content="Brander Digital" />
   <meta property="og:title" content="Brander Digital — Senior Google Ads -konsultointi" />
   <meta property="og:description" content="Senior-tason Google Ads -konsultointi ilman toimistokerrointa. Maksuton auditointi suomalaisille yrityksille." />
@@ -210,7 +210,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .btn-lg { padding: 0.75rem 1.75rem; font-size: 1rem; }
     .nav-right { display: flex; align-items: center; gap: 0.5rem; }
     .nav-burger { display: none; }
-    .nav-links .nav-links-cta { display: none; }
     @media(max-width:767px) {
       .nav-inner { padding: 0 0.75rem; }
       .nav-logo { gap: 0.5rem; }
@@ -242,13 +241,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       }
       .nav-links.open { max-height: 30rem; visibility: visible; transition: max-height .3s ease; }
       .nav-links a { padding: 1rem 1.5rem; font-size: 1.0625rem; color: var(--foreground); border-bottom: 1px solid var(--border); }
-      .nav-links .nav-links-cta {
-        display: block; margin: 1.25rem 1.5rem 1.5rem; padding: 0.8rem 1.75rem;
-        text-align: center; font-size: 1rem; font-weight: 600; color: #fff;
-        background: var(--primary); border-bottom: none; border-radius: 9999px;
-        box-shadow: 0 4px 14px -4px rgba(66,133,244,0.5);
-      }
-      .nav-links .nav-links-cta:hover { color: #fff; }
     }
 
     /* HERO */
@@ -541,7 +533,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       border-radius: calc(var(--radius) + 1rem); padding: 2rem;
       box-shadow: var(--shadow-soft);
     }
-    .form-hint { margin: 0 0 1.25rem; font-size: 0.875rem; line-height: 1.6; color: var(--muted-fg); }
     .form-row { display: grid; grid-template-columns: 1fr; gap: 1rem; }
     @media(min-width:640px) { .form-row { grid-template-columns: 1fr 1fr; } }
     .form-group { display: flex; flex-direction: column; gap: 0.375rem; margin-bottom: 1rem; }
@@ -554,6 +545,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
     .form-group input:focus, .form-group textarea:focus { border-color: var(--primary); }
     .form-group textarea { resize: vertical; min-height: 7rem; }
+    .form-check { display: flex; align-items: center; gap: 0.625rem; min-height: 44px; margin-bottom: 1rem; font-size: 0.875rem; font-weight: 500; cursor: pointer; }
+    .form-check input { width: 1.125rem; height: 1.125rem; flex-shrink: 0; accent-color: var(--primary); }
     .form-submit { width: 100%; margin-top: 0.5rem; padding: 0.875rem; font-size: 1rem; font-family: 'Figtree', 'Figtree Fallback', 'Figtree Fallback Android', sans-serif; justify-content: center; }
     .form-note { margin-top: 0.75rem; text-align: center; font-size: 0.75rem; color: var(--muted-fg); }
     .form-success { padding: 3rem 1rem; text-align: center; }
@@ -575,9 +568,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       border: 1px solid var(--border); background: var(--card);
       border-radius: calc(var(--radius) + 0.25rem);
       padding: 1.25rem 1.5rem;
-      display: flex; align-items: center; justify-content: space-between; gap: 1rem;
-      flex-wrap: wrap;
+      display: flex; flex-direction: column; align-items: stretch; gap: 1rem;
     }
+    /* Painike ja numero samaan linjaan otsikon kanssa (ikonin leveys + väli) */
+    #phone-reveal-btn, .phone-reveal .phone-reveal-number { align-self: flex-start; margin-left: 2.75rem; }
     .phone-reveal-text { display: flex; align-items: center; gap: 0.75rem; }
     .phone-reveal-icon {
       flex-shrink: 0; width: 2rem; height: 2rem; border-radius: 9999px;
@@ -653,7 +647,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <a href="/#minusta">Minusta</a>
       <a href="/#prosessi">Prosessi</a>
       <a href="/#ukk">UKK</a>
-      <a href="/yhteydenotto" class="nav-links-cta" onclick="if(window.dataLayer){window.dataLayer.push({event:'cta_click',cta_location:'nav_menu'});}">Tilaa maksuton auditointi</a>
     </div>
     <div class="nav-right">
       <a href="/yhteydenotto" class="btn-primary">Ota yhteyttä</a>
@@ -666,8 +659,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <section class="contact-section">
     <div>
       <span class="hero-badge"><span class="hero-badge-dot"></span>Maksuton auditointi</span>
-      <h1 style="margin-top:1.25rem;font-size:clamp(2rem,4vw,3rem);font-weight:800;line-height:1.1">Tilaa mainostilisi <span class="text-gradient">auditointi.</span></h1>
-      <p style="margin-top:1.25rem;font-size:1.125rem;line-height:1.75;color:var(--muted-fg)">Käyn Google Ads -mainostilisi läpi ja näytän, missä rahaa palaa ja missä on suurin potentiaali. Saat raportin käyttöösi, vaikket jatkaisi yhteistyötä.</p>
+      <h1 style="margin-top:1.25rem;font-size:clamp(2rem,4vw,3rem);font-weight:800;line-height:1.1">Ota <span class="text-gradient">yhteyttä.</span></h1>
+      <p style="margin-top:1.25rem;font-size:1.125rem;line-height:1.75;color:var(--muted-fg)">Jos sinulla on jo Google Ads -tili, käyn sen läpi maksutta ja näytän, missä rahaa palaa ja missä on suurin potentiaali. Saat raportin käyttöösi, vaikket jatkaisi yhteistyötä. Jos mainonta on vasta suunnitteilla, aloitetaan keskustelulla.</p>
       <ul class="contact-benefits">
         <li class="contact-benefit"><span class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span><span>Auditoinnin arvo 490 € – sinulle 0 €</span></li>
         <li class="contact-benefit"><span class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span><span>Vastaus yhteydenottoon työpäivän kuluessa</span></li>
@@ -676,7 +669,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <div>
       <div class="form-card">
-        <p class="form-hint">Eikö sinulla ole vielä mainostiliä? Kerro se lomakkeella, niin aloitetaan keskustelulla.</p>
         <form id="contact-form" action="https://formspree.io/f/mqevpday" method="POST" onsubmit="handleSubmit(event)">
           <div class="form-row">
             <div class="form-group"><label for="name">Etu- ja sukunimi</label><input id="name" name="name" required /></div>
@@ -688,10 +680,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
           <div class="form-group"><label for="website">Verkkosivu</label><input id="website" name="website" /></div>
           <div class="form-group"><label for="message">Lyhyesti tilanteesta</label><textarea id="message" name="message" rows="4" placeholder="Esim. nykyinen kk-budjetti, tavoitteet, mahdolliset haasteet."></textarea></div>
+          <label class="form-check"><input type="checkbox" name="auditointi" value="Kyllä" /> <span>Haluan maksuttoman auditoinnin nykyisestä Google Ads -tilistäni</span></label>
           <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
           <div class="cf-turnstile" data-sitekey="0x4AAAAAAEA376rKGuHLmQkX"></div>
-          <button type="submit" class="btn-primary form-submit">Tilaa maksuton auditointi</button>
-          <p class="form-note">Lähettämällä lomakkeen hyväksyt, että otan sinuun yhteyttä auditointia varten. Tietojasi ei luovuteta kolmansille.</p>
+          <button type="submit" class="btn-primary form-submit">Lähetä</button>
+          <p class="form-note">Lähettämällä lomakkeen hyväksyt, että otan sinuun yhteyttä viestisi perusteella. Tietojasi ei luovuteta kolmansille.</p>
         </form>
       </div>
       <div class="phone-reveal">
