@@ -570,8 +570,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       padding: 1.25rem 1.5rem;
       display: flex; flex-direction: column; align-items: stretch; gap: 1rem;
     }
-    /* Painike ja numero samaan linjaan otsikon kanssa (ikonin leveys + väli) */
-    #phone-reveal-btn, .phone-reveal .phone-reveal-number { align-self: flex-start; margin-left: 2.75rem; }
+    /* Painike ja numero samassa kohdassa: painike liukuu ylös pois, numero nousee alta painikkeen keskelle */
+    .phone-reveal-slot {
+      align-self: flex-start; display: inline-grid; overflow: hidden;
+      padding: 4px; margin: -4px 0 -4px calc(2.75rem - 4px);
+    }
+    .phone-reveal-slot > * {
+      grid-area: 1 / 1; justify-self: center; align-self: center;
+      transition: transform .32s cubic-bezier(.2,.8,.2,1), opacity .32s ease;
+    }
+    .phone-reveal-slot .phone-reveal-number { transform: translateY(150%); opacity: 0; }
+    .phone-reveal.is-open #phone-reveal-btn { transform: translateY(-130%); opacity: 0; pointer-events: none; }
+    .phone-reveal.is-open .phone-reveal-number { transform: none; opacity: 1; }
+    @media (prefers-reduced-motion: reduce) { .phone-reveal-slot > * { transition: none; } }
     .phone-reveal-text { display: flex; align-items: center; gap: 0.75rem; }
     .phone-reveal-icon {
       flex-shrink: 0; width: 2rem; height: 2rem; border-radius: 9999px;
@@ -695,7 +706,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <p class="phone-reveal-subtitle">Myös muissa asioissa saat minut kiinni puhelimitse.</p>
           </div>
         </div>
-        <button type="button" class="btn-outline" id="phone-reveal-btn" onclick="revealPhone()">Näytä puhelinnumero</button>
+        <div class="phone-reveal-slot" aria-live="polite">
+          <button type="button" class="btn-outline" id="phone-reveal-btn" onclick="revealPhone()">Näytä puhelinnumero</button>
+        </div>
       </div>
     </div>
   </section>
@@ -749,7 +762,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     link.href = 'tel:' + telNumber;
     link.className = 'phone-reveal-number';
     link.textContent = number;
-    btn.replaceWith(link);
+    btn.after(link);
+    btn.setAttribute('aria-hidden', 'true');
+    btn.tabIndex = -1;
+    // Lähtöasento piirretään ennen animaatiota
+    void link.offsetWidth;
+    btn.closest('.phone-reveal').classList.add('is-open');
+    link.focus({ preventScroll: true });
     if (window.dataLayer) {
       window.dataLayer.push({ event: 'phone_number_reveal' });
     }
