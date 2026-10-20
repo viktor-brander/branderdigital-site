@@ -61,12 +61,61 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <meta property="og:image" content="https://branderdigital.fi/og-image.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="canonical" href="https://branderdigital.fi/data-studio-raportti" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Figtree:wght@400;500;600;700&display=swap" />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
-  <noscript><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet" /></noscript>
   <style>
+    /* Omalta palvelimelta: Outfit ja Figtree (variable, latin) */
+    @font-face {
+      font-family: 'Outfit'; font-style: normal; font-weight: 400 800; font-display: swap;
+      src: url('/fonts/outfit-latin-wght-v1.woff2') format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+    @font-face {
+      font-family: 'Figtree'; font-style: normal; font-weight: 400 700; font-display: swap;
+      src: url('/fonts/figtree-latin-wght-v1.woff2') format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+    /* Fallback-fontit mitoitettu vastaamaan Outfitia ja Figtreetä, ettei fonttivaihto siirrä asettelua */
+    @font-face {
+      font-family: 'Outfit Fallback'; font-weight: 400 600;
+      src: local('Arial'), local('ArialMT'), local('Liberation Sans');
+      size-adjust: 100.47%; ascent-override: 99.53%; descent-override: 25.88%; line-gap-override: 0%;
+    }
+    @font-face {
+      font-family: 'Outfit Fallback'; font-weight: 700 900;
+      src: local('Arial Bold'), local('Arial-BoldMT'), local('Liberation Sans Bold');
+      size-adjust: 98.35%; ascent-override: 101.68%; descent-override: 26.44%; line-gap-override: 0%;
+    }
+    @font-face {
+      font-family: 'Outfit Fallback Android'; font-weight: 400 600;
+      src: local('Roboto'), local('Roboto-Regular');
+      size-adjust: 100.3%; ascent-override: 99.7%; descent-override: 25.92%; line-gap-override: 0%;
+    }
+    @font-face {
+      font-family: 'Outfit Fallback Android'; font-weight: 700 900;
+      src: local('Roboto Bold'), local('Roboto-Bold');
+      size-adjust: 104.04%; ascent-override: 96.11%; descent-override: 24.99%; line-gap-override: 0%;
+    }
+    @font-face {
+      font-family: 'Figtree Fallback'; font-weight: 400 500;
+      src: local('Arial'), local('ArialMT'), local('Liberation Sans');
+      size-adjust: 101%; ascent-override: 94.87%; descent-override: 25.1%; line-gap-override: 0%;
+    }
+    @font-face {
+      font-family: 'Figtree Fallback'; font-weight: 600 900;
+      src: local('Arial Bold'), local('Arial-BoldMT'), local('Liberation Sans Bold');
+      size-adjust: 96.21%; ascent-override: 98.75%; descent-override: 25.99%; line-gap-override: 0%;
+    }
+    @font-face {
+      font-family: 'Figtree Fallback Android'; font-weight: 400 500;
+      src: local('Roboto'), local('Roboto-Regular');
+      size-adjust: 99.97%; ascent-override: 95.03%; descent-override: 25.1%; line-gap-override: 0%;
+    }
+    @font-face {
+      font-family: 'Figtree Fallback Android'; font-weight: 600 900;
+      src: local('Roboto Bold'), local('Roboto-Bold');
+      size-adjust: 101.77%; ascent-override: 93.34%; descent-override: 24.56%; line-gap-override: 0%;
+    }
+
+
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
@@ -95,13 +144,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     body {
       background: var(--background);
       color: var(--foreground);
-      font-family: 'Figtree', ui-sans-serif, system-ui, sans-serif;
+      font-family: 'Figtree', 'Figtree Fallback', 'Figtree Fallback Android', ui-sans-serif, system-ui, sans-serif;
       -webkit-font-smoothing: antialiased;
       line-height: 1.6;
     }
 
     h1,h2,h3,h4 {
-      font-family: 'Outfit', ui-sans-serif, system-ui, sans-serif;
+      font-family: 'Outfit', 'Outfit Fallback', 'Outfit Fallback Android', ui-sans-serif, system-ui, sans-serif;
       letter-spacing: -0.02em;
     }
 
@@ -132,7 +181,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       border-radius: 0.5rem; background: var(--gradient);
       box-shadow: var(--shadow-elegant);
     }
-    .nav-logo-text { font-family: 'Outfit', sans-serif; font-size: 1.125rem; font-weight: 600; }
+    .nav-logo-text { font-family: 'Outfit', 'Outfit Fallback', 'Outfit Fallback Android', sans-serif; font-size: 1.125rem; font-weight: 600; }
     .nav-logo-text span { color: var(--muted-fg); font-weight: 500; }
     .nav-links { display: flex; align-items: center; gap: 1.75rem; }
     .nav-links a { color: var(--muted-fg); text-decoration: none; font-size: 0.875rem; font-weight: 500; transition: color .15s; }
@@ -234,7 +283,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     @media(min-width:768px) { .footer-inner { grid-template-columns: repeat(3, 1fr); } }
     .footer-logo { display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.75rem; }
     .footer-tagline { font-size: 0.875rem; line-height: 1.6; color: var(--muted-fg); max-width: 18rem; }
-    .footer-nav-title, .footer-contact-title { font-family: 'Outfit', sans-serif; font-size: 0.875rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .footer-nav-title, .footer-contact-title { font-family: 'Outfit', 'Outfit Fallback', 'Outfit Fallback Android', sans-serif; font-size: 0.875rem; font-weight: 700; margin-bottom: 0.5rem; }
     .footer-links { display: flex; flex-direction: column; gap: 0.5rem; }
     .footer-links a { font-size: 0.875rem; color: var(--muted-fg); text-decoration: none; transition: color .15s; }
     .footer-links a:hover { color: var(--foreground); }
@@ -281,7 +330,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .table-wrap { margin-top: 1.25rem; overflow-x: auto; border: 1px solid var(--border); border-radius: var(--radius); }
     .article table { width: 100%; min-width: 36rem; border-collapse: collapse; font-size: 0.9375rem; }
     .article th, .article td { padding: 0.75rem 1rem; text-align: left; vertical-align: top; border-bottom: 1px solid var(--border); line-height: 1.5; }
-    .article th { background: var(--surface-soft); font-family: 'Outfit', sans-serif; font-weight: 600; }
+    .article th { background: var(--surface-soft); font-family: 'Outfit', 'Outfit Fallback', 'Outfit Fallback Android', sans-serif; font-weight: 600; }
     .article tr:last-child td { border-bottom: none; }
     @media(max-width:639px) {
       .table-wrap { overflow: visible; border: none; }
@@ -289,7 +338,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       .article thead { display: none; }
       .article tr { margin-top: 1rem; border: 1px solid var(--border); border-radius: var(--radius); background: var(--card); overflow: hidden; }
       .article td { border-bottom: 1px solid var(--border); padding: 0.75rem 1rem; }
-      .article tr td:first-child { background: var(--surface-soft); font-family: 'Outfit', sans-serif; }
+      .article tr td:first-child { background: var(--surface-soft); font-family: 'Outfit', 'Outfit Fallback', 'Outfit Fallback Android', sans-serif; }
       .article tr td:last-child { border-bottom: none; }
       .article td[data-label]:not(:first-child)::before { content: attr(data-label); display: block; margin-bottom: 0.15rem; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted-fg); }
     }
@@ -300,7 +349,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .compare-card h3 { margin-top: 0; }
     .faq { margin-top: 1.5rem; }
     .faq details { border-bottom: 1px solid var(--border); padding: 1rem 0; }
-    .faq summary { cursor: pointer; font-family: 'Outfit', sans-serif; font-size: 1.0625rem; font-weight: 600; list-style: none; }
+    .faq summary { cursor: pointer; font-family: 'Outfit', 'Outfit Fallback', 'Outfit Fallback Android', sans-serif; font-size: 1.0625rem; font-weight: 600; list-style: none; }
     .faq summary::-webkit-details-marker { display: none; }
     .faq summary::after { content: '+'; float: right; font-weight: 300; font-size: 1.25rem; }
     .faq details[open] summary::after { content: '\2212'; }
