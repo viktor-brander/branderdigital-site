@@ -227,7 +227,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .btn-lg { padding: 0.75rem 1.75rem; font-size: 1rem; }
     .nav-right { display: flex; align-items: center; gap: 0.5rem; }
     .nav-burger { display: none; }
-    .nav-links .nav-links-cta { display: none; }
     @media(max-width:767px) {
       .nav-inner { padding: 0 0.75rem; }
       .nav-logo { gap: 0.5rem; }
@@ -259,13 +258,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       }
       .nav-links.open { max-height: 30rem; visibility: visible; transition: max-height .3s ease; }
       .nav-links a { padding: 1rem 1.5rem; font-size: 1.0625rem; color: var(--foreground); border-bottom: 1px solid var(--border); }
-      .nav-links .nav-links-cta {
-        display: block; margin: 1.25rem 1.5rem 1.5rem; padding: 0.8rem 1.75rem;
-        text-align: center; font-size: 1rem; font-weight: 600; color: #fff;
-        background: var(--primary); border-bottom: none; border-radius: 9999px;
-        box-shadow: 0 4px 14px -4px rgba(66,133,244,0.5);
-      }
-      .nav-links .nav-links-cta:hover { color: #fff; }
     }
 
     /* HERO */
@@ -646,7 +638,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <a href="/#minusta">Minusta</a>
       <a href="/#prosessi">Prosessi</a>
       <a href="/#ukk">UKK</a>
-      <a href="/yhteydenotto" class="nav-links-cta" onclick="if(window.dataLayer){window.dataLayer.push({event:'cta_click',cta_location:'nav_menu'});}">Tilaa maksuton auditointi</a>
     </div>
     <div class="nav-right">
       <a href="/yhteydenotto" class="btn-primary">Ota yhteyttä</a>

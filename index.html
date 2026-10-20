@@ -210,7 +210,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .btn-lg { padding: 0.75rem 1.75rem; font-size: 1rem; }
     .nav-right { display: flex; align-items: center; gap: 0.5rem; }
     .nav-burger { display: none; }
-    .nav-links .nav-links-cta { display: none; }
     @media(max-width:767px) {
       .nav-inner { padding: 0 0.75rem; }
       .nav-logo { gap: 0.5rem; }
@@ -242,13 +241,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       }
       .nav-links.open { max-height: 30rem; visibility: visible; transition: max-height .3s ease; }
       .nav-links a { padding: 1rem 1.5rem; font-size: 1.0625rem; color: var(--foreground); border-bottom: 1px solid var(--border); }
-      .nav-links .nav-links-cta {
-        display: block; margin: 1.25rem 1.5rem 1.5rem; padding: 0.8rem 1.75rem;
-        text-align: center; font-size: 1rem; font-weight: 600; color: #fff;
-        background: var(--primary); border-bottom: none; border-radius: 9999px;
-        box-shadow: 0 4px 14px -4px rgba(66,133,244,0.5);
-      }
-      .nav-links .nav-links-cta:hover { color: #fff; }
     }
 
     /* HERO */
@@ -881,7 +873,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <a href="#minusta">Minusta</a>
       <a href="#prosessi">Prosessi</a>
       <a href="#ukk">UKK</a>
-      <a href="/yhteydenotto" class="nav-links-cta" onclick="if(window.dataLayer){window.dataLayer.push({event:'cta_click',cta_location:'nav_menu'});}">Tilaa maksuton auditointi</a>
     </div>
     <div class="nav-right">
       <a href="/yhteydenotto" class="btn-primary" onclick="if(window.dataLayer){window.dataLayer.push({event:'cta_click',cta_location:'nav'});}">Ota yhteyttä</a>
@@ -910,7 +901,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
        <p>Yli 10 vuoden kokemus, Google Premier Partner -tausta ja yhteistyötä Suomen tunnetuimpien yritysten kanssa. Strategia, toteutus ja optimointi samalta asiantuntijalta.</p>
 
         <div class="hero-actions">
-          <a href="/yhteydenotto" class="btn-primary btn-lg" onclick="if(window.dataLayer){window.dataLayer.push({event:'cta_click',cta_location:'hero'});}">Tilaa maksuton auditointi</a>
+          <a href="/yhteydenotto" class="btn-primary btn-lg" onclick="if(window.dataLayer){window.dataLayer.push({event:'cta_click',cta_location:'hero'});}">Ota yhteyttä</a>
           <a href="#paketit" class="btn-outline btn-lg">Katso paketit</a>
         </div>
 <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; column-gap: 24px; row-gap: 8px; margin-top: 20px; font-size: 14px; font-weight: 500; color: #4b5563;">
@@ -1003,7 +994,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <li class="pkg-feature"><span class="pkg-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span><span>30 min sparraus / kk + sähköpostikysymykset</span></li>
             <li class="pkg-feature"><span class="pkg-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span><span>1 kk irtisanomisaika</span></li>
           </ul>
-          <div class="pkg-cta pkg-cta-outline"><a href="/yhteydenotto" onclick="if(window.dataLayer){window.dataLayer.push({event:'cta_click',cta_location:'paketti_s'});}">Pyydä aloituskeskustelu</a></div>
+          <div class="pkg-cta pkg-cta-primary"><a href="/yhteydenotto" onclick="if(window.dataLayer){window.dataLayer.push({event:'cta_click',cta_location:'paketti_s'});}">Ota yhteyttä</a></div>
         </div>
 
         <!-- M -->
@@ -1026,7 +1017,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <li class="pkg-feature"><span class="pkg-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span><span>45 min raportointipalaveri / kk</span></li>
             <li class="pkg-feature"><span class="pkg-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span><span>Sähköpostituki työpäivinä</span></li>
           </ul>
-          <div class="pkg-cta pkg-cta-primary"><a href="/yhteydenotto" onclick="if(window.dataLayer){window.dataLayer.push({event:'cta_click',cta_location:'paketti_m'});}">Tilaa maksuton auditointi</a></div>
+          <div class="pkg-cta pkg-cta-primary"><a href="/yhteydenotto" onclick="if(window.dataLayer){window.dataLayer.push({event:'cta_click',cta_location:'paketti_m'});}">Ota yhteyttä</a></div>
         </div>
 
         <!-- L -->
@@ -1049,7 +1040,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <li class="pkg-feature"><span class="pkg-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span><span>Merchant Center / Shopping -optimointi</span></li>
             <li class="pkg-feature"><span class="pkg-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span><span>Slack/Teams-tavoitettavuus työpäivinä</span></li>
           </ul>
-          <div class="pkg-cta pkg-cta-outline"><a href="/yhteydenotto" onclick="if(window.dataLayer){window.dataLayer.push({event:'cta_click',cta_location:'paketti_l'});}">Tilaa maksuton auditointi</a></div>
+          <div class="pkg-cta pkg-cta-primary"><a href="/yhteydenotto" onclick="if(window.dataLayer){window.dataLayer.push({event:'cta_click',cta_location:'paketti_l'});}">Ota yhteyttä</a></div>
         </div>
       </div>
 
@@ -1233,7 +1224,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="cta-shine"></div>
         <h2>Maksuton auditointi - ilman myyntipuheita.</h2>
         <p>Maksuttomassa auditoinnissa käydään tilisi nykytila läpi. Auditoinnin arvo 490 €. Vastaus työpäivän kuluessa yhteydenotosta.</p>
-        <a href="/yhteydenotto" class="btn-secondary" onclick="if(window.dataLayer){window.dataLayer.push({event:'cta_click',cta_location:'cta_box'});}">Tilaa maksuton auditointi</a>
+        <a href="/yhteydenotto" class="btn-secondary" onclick="if(window.dataLayer){window.dataLayer.push({event:'cta_click',cta_location:'cta_box'});}">Ota yhteyttä</a>
       </div>
     </div>
   </section>
